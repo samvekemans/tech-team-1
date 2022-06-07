@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+p, label, legend, fieldset, textarea, button, li, h1 {
+  font-family: "Roboto", sans-serif;
+}
+
+header > nav > a > img:first-of-type {
+  max-height: 5em;
+}
+
+header > nav > a:nth-child(2) > img {
+  max-height: 3.7em;
+  border-radius: 100%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.429);
+}
+
+header {
+  padding: 0.3em 1.3em;
+  background-color: #F2D6CA;
+}
+
+header > nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.index {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.index main {
+  max-width: 50em;
+  margin: auto;
+  position: relative;
+}
+
+.index main > section {
+  background-color: rgba(242, 214, 202, 0.2823529412);
+  padding: 10%;
+}
+
+.index main > section > h1 {
+  font-family: "Bungee Shade", cursive;
+  font-size: 3.75em;
+}
+
+.index main > section > p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  margin-bottom: 1.9em;
+}
+
+.index main > section > p:first-of-type {
+  margin: 0.7em 0em;
+}
+
+.index main > section > a {
+  padding: 0.7em;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  background-color: #519188;
+}
+
+.pictureInput {
+  display: none;
+}
+
+.register > main > form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 2em;
+  margin-bottom: 2em;
+  gap: 1em 0em;
+}
+
+.register > main > form > article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register > main > form > article > input {
+  height: 2em;
+  font-size: 1em;
+}
+
+.register > main > form > article > textarea {
+  height: 5em;
+  font-size: 1em;
+  padding: 0.2em;
+  resize: none;
+}
+
+.register > main > form > article > label {
+  font-weight: bold;
+}
+
+.register > main > form > article:first-of-type {
+  grid-row: span 3;
+  margin-right: 1em;
+}
+
+.register > main > form > article:first-of-type > label {
+  cursor: pointer;
+}
+
+.register > main > form > article:nth-child(3) {
+  grid-column: span 2;
+  margin-right: 0.5em;
+}
+
+.register > main > form > article:nth-child(5) {
+  grid-column: span 3;
+}
+
+.register > main > form > fieldset {
+  grid-column: span 3;
+  border: none;
+  gap: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.register > main > form > fieldset > input, .register > main > form > fieldset > label {
+  cursor: pointer;
+}
+
+.register > main > form > fieldset > input {
+  height: 2em;
+  width: 2em;
+}
+
+.register > main > form > fieldset > label {
+  font-size: 1.5em;
+}
+
+.register > main > form > fieldset > legend {
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.register > main > form > section {
+  grid-column: span 5;
+  margin: 1em 0em;
+}
+
+.register > main > form > section > article > label {
+  cursor: pointer;
+}
+
+.register > main > form > section > p {
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+.register > main > form > button {
+  grid-column: span 5;
+  margin-left: auto;
+  padding: 1em 2em;
+  background-color: #519188;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: end;
+}
+.register > main > form > button:hover {
+  box-shadow: #519188 0px 0px 5px;
+}
+
+.register > main > article:first-of-type > a {
+  position: relative;
+}
+
+.register > main > article:first-of-type > a:hover::after {
+  content: "";
+  top: 100%;
+  left: 0px;
+  right: 8px;
+  margin: auto;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  border-style: solid;
+  border-image: initial;
+  border-color: #519188 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+  border-width: 10px;
+}
+
+.selected::after {
+  content: "";
+  top: 100%;
+  left: 0px;
+  right: 8px;
+  margin: auto;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  border-style: solid;
+  border-image: initial;
+  border-color: #519188 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+  border-width: 10px;
+}
+
+.register > main {
+  max-width: 50em;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.register > main > article:first-of-type {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.register > main > article:first-of-type > a {
+  width: 12.5em;
+  padding: 1em;
+  border-radius: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  border: #519188 3px solid;
+}
+
+.register > main > form > section > article {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.register > main > form > section > article > input:checked + label {
+  background-color: #519188;
+  box-shadow: 0px 0px 20px #519188;
+}
+
+.register > main > form > section > article > label {
+  width: 8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 10px #519188;
+  padding: 1em;
+  border-radius: 0.3em;
+}
+.register > main > form > section > article > label:hover {
+  box-shadow: 0px 0px 20px #519188;
+}
+
+.register > main > form > section > article > label > img {
+  max-height: 6em;
+  height: auto;
+}
+
+.register > main > form > section:first-of-type {
+  grid-column: span 4;
+  display: flex;
+}
+
+.register > main > form > section:first-of-type > article:first-of-type {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.register > main > form > section:first-of-type > article:first-of-type > label {
+  box-shadow: none;
+  padding: 0em;
+  flex-direction: row;
+}
+
+.pElement {
+  color: red;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.register > main > form > section:first-of-type > article:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  margin-left: 2em;
+}
+
+.register > main > form > section > article:nth-child(2) > p {
+  font-size: 1.3em;
+}
+
+.register > main > form > section input {
+  height: 2.5em;
+  width: 20em;
+}
+
+.register > main > form > section label {
+  font-weight: bold;
+}
+
+.adress {
+  padding: 0.2em 1em;
+  background-color: #519188;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.users > main {
+  display: flex;
+  flex-direction: column;
+}
+
+.users > main > article {
+  display: flex;
+  justify-content: center;
+}
+
+.users > main > section {
+  max-width: 60em;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2em 0.2em;
+  position: relative;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+.users > main > section > section h1 {
+  font-size: 2em;
+  font-family: "Roboto Mono", monospace;
+}
+
+.users > main > section > section {
+  position: relative;
+  padding: 2em 3em;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.221);
+  border-radius: 5px;
+}
+.users > main > section > section:hover {
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.654);
+}
+
+.users > main > section > section > a {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  text-decoration: none;
+  color: black;
+}
+
+.users > main > section > section > a > article > ul > li {
+  margin-left: 0.7em;
+}
+
+.users > main > section > section > a > article:nth-child(2) > p:first-of-type {
+  margin-bottom: 1em;
+}
+
+.users > main > section > section > a > article:nth-child(2) > ul {
+  display: flex;
+  gap: 1em;
+}
+
+.users > main > section > section > a > article:first-of-type {
+  width: 20em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.users > main > section > section > a > article > div {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  box-shadow: #519188 3px 3px 5px;
+  margin-bottom: 1em;
+}
+
+.users span {
+  display: block;
+}
+
+.users > main > section > section > a > article:nth-child(3) ul {
+  display: flex;
+  gap: 1em;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  margin-top: 0.5em;
+}
+
+.users > main > section > section > a > article ul img {
+  width: 2.2em;
+  height: 2.2em;
+  padding: 0.2em;
+}
+
+.users > main > section > section > a > article > img {
+  display: none;
+}
+
+.users > main > section > section > a > article > p > strong {
+  font-size: 1.1em;
+}
+
+.next {
+  background-color: #519188;
+  color: wheat;
+  border: none;
+  padding: 0.5em 2em;
+  margin-left: 1em;
+  cursor: pointer;
+}
+.next:hover {
+  box-shadow: #519188 0px 0px 10px;
+}
+
+.previous {
+  background-color: #519188;
+  color: wheat;
+  border: none;
+  padding: 0.5em 2em;
+  margin-right: 1em;
+  cursor: pointer;
+}
+.previous:hover {
+  box-shadow: #519188 0px 0px 10px;
+}
+
+.user-detail {
+  max-width: 50em;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.user-detail img {
+  width: 10em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 5px;
+}
+
+.user-detail > article > article {
+  display: flex;
+  gap: 2em;
+}
+
+.user-detail > article > article img {
+  width: 4em;
+}
+
+/*# sourceMappingURL=main.css.map */

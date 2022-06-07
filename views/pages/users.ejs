@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+
+<body class="users">
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+  <section class="x-overflow">
+    <% users.forEach((user) =>{ %>
+      <section class="section">
+        <a href="/<%= user._id %> ">
+          
+          <article>
+            <h1><%= user.name %> </h1>
+            <div style="background-image: url('<%= user.image %>');">
+            </div>
+            <img src="<%= user.image %> " alt="">
+          </article>
+          
+          <article>
+            <p><strong>Leeftijd:</strong> <span><%= user.age %></span> </p>
+            <p><strong>Hulp:</strong></p> 
+            <ul>
+              <% user.help.forEach((help)=> { %>
+                    <li><%= help %></li>
+              <% }); %> 
+            </ul>
+          </article>
+          
+          <article>
+            <p><strong><%= oldTradesTitle %></strong></p>
+            <ul>
+              <% user.oldTrades.forEach((oldTrade)=> { %>
+                  <img src="/images/<%= oldTrade %>.png" alt="icon">
+              <% }); %> 
+            </ul>
+          </article>
+         
+        </a>
+      </section>
+      <% }); %> 
+    </section>
+    <article>
+      <button class="previous"><--</button>
+      <button class="next">--></button>
+    </article>
+  </main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+<script type="text/javascript" src="/scripts/users.js"></script>
+</body>
+</html> 
