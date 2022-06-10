@@ -17,7 +17,11 @@
     <p class="pElement"></p>
 
     <form action="/ouderen" method="post" enctype="multipart/form-data" class="form">
+      <div style="display: none;">
       <input name="account" type="hidden" id="account" value="<%= valueType %>">
+      <input name="lat" type="hidden" id="lat">
+      <input name="lon" type="hidden" id="lng">
+    </div>
 
         <article>
           <label for="pictureUser">
