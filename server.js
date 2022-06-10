@@ -121,7 +121,6 @@ app.get('/:userId', async (req, res) => {
 
 // Post from register with an upload from multer
 app.post('/ouderen', upload, async (req, res) => {
-  console.log(req.body);
   // New user variable
   const user = {
     accountType: req.body.account,
@@ -136,6 +135,8 @@ app.post('/ouderen', upload, async (req, res) => {
     houseNumber: req.body.houseNumber,
     street: req.body.street,
     postcode: req.body.zipcode[0],
+    lat: req.body.lat,
+    lng: req.body.lon,
   };
 
   // putting new user in database insertOne()

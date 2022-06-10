@@ -27,6 +27,8 @@ const streetInput = document.querySelector('#street');
 const zipCodeTextInput = document.querySelector('#zipcode');
 const provinceInput = document.querySelector('#province');
 const pictureInput = document.querySelector('.pictureInput');
+const latInput = document.querySelector('#lat');
+const lngInput = document.querySelector('#lng');
 
 const checkboxesSearch = document.querySelectorAll(
   '.search input[type=checkbox]:checked'
@@ -86,13 +88,13 @@ adressButton.addEventListener('click', async () => {
           streetInput.value = data.details[0].street;
           zipCodeTextInput.value = data.details[0].postcode;
           provinceInput.value = data.details[0].province;
+          latInput.value = data.details[0].lat;
+          lngInput.value = data.details[0].lon;
         }
       })
       .catch((error) => {
         throw error;
       });
-  } else {
-    console.log('nope');
   }
 });
 
