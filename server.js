@@ -26,7 +26,7 @@ const session = require("express-session");
 // config map checken.
 
 // Routes
-const routes = require("./routes/useRoutes");
+const routes = require("./routes/userRoutes");
 
 
 /*******************************************************
