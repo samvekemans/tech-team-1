@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%- include('../partials/head'); %>
 </head>
 
 <body class="register">
-<header>
-  <%- include('../partials/header'); %>
-</header>
+  <header>
+    <%- include('../partials/header'); %>
+  </header>
 
-<main>
+  <main>
     <article>
-        <a href="/ouderen" id="old-person">Ouderen</a>
-        <a href="/zorgmedewerker" id="caregiver">Zorgmedewerker</a>
+      <a href="/ouderen" id="old-person">Ouderen</a>
+      <a href="/zorgmedewerker" id="caregiver">Zorgmedewerker</a>
     </article>
     <p class="pElement"></p>
 
     <form action="/ouderen" method="post" enctype="multipart/form-data" class="form">
       <div style="display: none;">
-      <input name="account" type="hidden" id="account" value="<%= valueType %>">
-      <input name="lat" type="hidden" id="lat">
-      <input name="lon" type="hidden" id="lng">
-    </div>
+        <input name="account" type="hidden" id="account" value="<%= valueType %>">
+        <input name="lat" type="hidden" id="lat">
+        <input name="lon" type="hidden" id="lng">
+      </div>
 
-        <article>
-          <label for="pictureUser">
-            <img src="/images/profile.png" alt="user" class="img" height="200">
-          </label>
-          <input id="pictureUser" type="file" name="pictureUser" class="pictureInput"  accept="image/png, image/jpeg">
-        </article>
+      <article>
+        <label for="pictureUser">
+          <img src="/images/profile.png" alt="user" class="img" height="200">
+        </label>
+        <input id="pictureUser" type="file" name="pictureUser" class="pictureInput" accept="image/png, image/jpeg">
+      </article>
 
-        <article>
-          <label for="name">Naam</label>
-          <input name="name" type="text" required>
-        </article>
+      <article>
+        <label for="name">Naam</label>
+        <input name="name" type="text" required>
+      </article>
 
-        <article>
-          <label for="age">Leeftijd</label>
-          <input name="age" type="number" required>
-        </article>
+      <article>
+        <label for="age">Leeftijd</label>
+        <input name="age" type="number" required>
+      </article>
+      <article>
+        <label for="email">E-mailadres</label>
+        <input name="email" type="email" required>
+      </article>
+      <article>
+        <label for="password">Wachtwoord</label>
+        <input name="password" type="password" required>
+      </article>
+      <article>
+        <label for="description">Over jou</label>
+        <textarea name="description" type="text" required></textarea>
+      </article>
 
-        <article>
-          <label for="description">Over jou</label>
-          <textarea name="description" type="text" required></textarea>
-        </article>
-     
 
       <fieldset>
         <legend><%= radioTitle %></legend>
@@ -81,81 +89,83 @@
 
       <section>
         <p><%= iconTitles.first %></p>
-          <article>
-            <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="sociaal" value="sociaal" hidden>
-            <label for="sociaal">
-              <img src="/images/sociaal.png" alt="sociaal">
-              <p>Sociaal</p>
-            </label>
-            
-            <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="behulpzaam" value="behulpzaam" hidden>
-            <label for="behulpzaam">
-              <img src="/images/behulpzaam.png" alt="Behulpzaam">
-              <p>Behulpzaam</p>
-            </label>
-            
-            <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="enthousiast" value="enthousiast" hidden>
-            <label for="enthousiast">
-              <img src="/images/enthousiast.png" alt="enthousiast">
-              <p>Enthousiast</p>
-            </label>
+        <article>
+          <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="sociaal" value="sociaal" hidden>
+          <label for="sociaal">
+            <img src="/images/sociaal.png" alt="sociaal">
+            <p>Sociaal</p>
+          </label>
 
-            <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="flexibel" value="flexibel" hidden>
-            <label for="flexibel">
-              <img src="/images/flexibel.png" alt="flexibel">
-              <p>Flexibel</p>
-            </label>
+          <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="behulpzaam" value="behulpzaam" hidden>
+          <label for="behulpzaam">
+            <img src="/images/behulpzaam.png" alt="Behulpzaam">
+            <p>Behulpzaam</p>
+          </label>
 
-            <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="gevoelig" value="gevoelig" hidden>
-            <label for="gevoelig">
-              <img src="/images/gevoelig.png" alt="gevoelig">
-              <p>Gevoelig</p>
-            </label>
-          </article>
+          <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="enthousiast" value="enthousiast"
+            hidden>
+          <label for="enthousiast">
+            <img src="/images/enthousiast.png" alt="enthousiast">
+            <p>Enthousiast</p>
+          </label>
+
+          <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="flexibel" value="flexibel" hidden>
+          <label for="flexibel">
+            <img src="/images/flexibel.png" alt="flexibel">
+            <p>Flexibel</p>
+          </label>
+
+          <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="gevoelig" value="gevoelig" hidden>
+          <label for="gevoelig">
+            <img src="/images/gevoelig.png" alt="gevoelig">
+            <p>Gevoelig</p>
+          </label>
+        </article>
       </section>
 
       <section>
         <p><%= iconTitles.second %></p>
-          <article>
-            <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="sociaal2" value="sociaal" hidden>
-            <label for="sociaal2">
-              <img src="/images/sociaal.png" alt="sociaal">
-              <p>Sociaal</p>
-            </label>
-            
-            <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="interest" value="interest" hidden>
-            <label for="interest">
-              <img src="/images/interest.png" alt="Interesse">
-              <p>Interesse</p>
-            </label>
-            
-            <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="respect" value="respect" hidden>
-            <label for="respect">
-              <img src="/images/respect.png" alt="enthousiast">
-              <p>Respectvol</p>
-            </label>
+        <article>
+          <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="sociaal2" value="sociaal" hidden>
+          <label for="sociaal2">
+            <img src="/images/sociaal.png" alt="sociaal">
+            <p>Sociaal</p>
+          </label>
 
-            <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="flexibel2" value="flexibel" hidden>
-            <label for="flexibel2">
-              <img src="/images/flexibel.png" alt="flexibel">
-              <p>Flexibel</p>
-            </label>
+          <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="interest" value="interest" hidden>
+          <label for="interest">
+            <img src="/images/interest.png" alt="Interesse">
+            <p>Interesse</p>
+          </label>
 
-            <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="openly" value="openly" hidden>
-            <label for="openly">
-              <img src="/images/openly.png" alt="gevoelig">
-              <p>Openhartig</p>
-            </label>
-          </article>
+          <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="respect" value="respect" hidden>
+          <label for="respect">
+            <img src="/images/respect.png" alt="enthousiast">
+            <p>Respectvol</p>
+          </label>
+
+          <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="flexibel2" value="flexibel" hidden>
+          <label for="flexibel2">
+            <img src="/images/flexibel.png" alt="flexibel">
+            <p>Flexibel</p>
+          </label>
+
+          <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="openly" value="openly" hidden>
+          <label for="openly">
+            <img src="/images/openly.png" alt="gevoelig">
+            <p>Openhartig</p>
+          </label>
+        </article>
       </section>
 
-      <button class="submit" type="submit">Registreren →</button> 
+      <button class="submit" type="submit">Registreren →</button>
     </form>
-</main>
+  </main>
 
-<footer>
-  <%- include('../partials/footer'); %>
-</footer>
-<script type="text/javascript" src="/scripts/register.js"></script>
+  <footer>
+    <%- include('../partials/footer'); %>
+  </footer>
+  <script type="text/javascript" src="/scripts/register.js"></script>
 </body>
+
 </html>
