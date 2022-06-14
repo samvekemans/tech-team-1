@@ -6,6 +6,14 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
+    lat: {
+        type: String,
+        required: false
+    },
+    lon: {
+        type: String,
+        required: false
+    },
     name: {
         type: String,
         required: true,

@@ -7,6 +7,16 @@ const user_index = (req, res) => {
     res.render("pages/index");
 };
 
+const user_users = async (req, res) => {
+    const users = await User.find({});
+    let oldTradesTitle = "Mijn eigenschappen:";
+
+    res.render("pages/users", {
+        users,
+        oldTradesTitle,
+    });
+};
+
 const user_detail = async (req, res) => {
     let careTradesTitle = "Mijn eigenschappen:";
     let oldTradesTitle = "Wat de ouderen verwacht van jou:";
@@ -15,16 +25,6 @@ const user_detail = async (req, res) => {
         user,
         oldTradesTitle,
         careTradesTitle
-    });
-};
-
-const user_users = async (req, res) => {
-    const users = await User.find({});
-    let oldTradesTitle = "Mijn eigenschappen:";
-
-    res.render("pages/users", {
-        users,
-        oldTradesTitle,
     });
 };
 
@@ -71,6 +71,8 @@ const user_register_zorg = (req, res) => {
 const user_register_post = async (req, res) => {
     const {
         account,
+        lat,
+        lon,
         name,
         email,
         password,
@@ -84,13 +86,14 @@ const user_register_post = async (req, res) => {
         city,
         street,
         oldPersonTrades,
-        careGiverTrades,
+        careGiverTrades
     } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
-    console.log(hashedPassword);
     try {
         const user = await User.create({
             account,
+            lat,
+            lon,
             name,
             email,
             hashedPassword,
@@ -106,12 +109,11 @@ const user_register_post = async (req, res) => {
             oldPersonTrades,
             careGiverTrades,
         });
-        console.log(user);
-        return res.json(user);
+        res.redirect("/");
     } catch (err) {
         console.log(err);
     }
-    res.redirect("/login");
+
 };
 
 const user_login = (req, res) => {

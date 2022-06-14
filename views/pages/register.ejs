@@ -12,12 +12,12 @@
 
   <main>
     <article>
-      <a href="/ouderen" id="old-person">Ouderen</a>
-      <a href="/zorgmedewerker" id="caregiver">Zorgmedewerker</a>
+      <a href="/register" id="old-person">Ouderen</a>
+      <a href="/register-zorg" id="caregiver">Zorgmedewerker</a>
     </article>
     <p class="pElement"></p>
 
-    <form action="/ouderen" method="post" enctype="multipart/form-data" class="form">
+    <form action="/register" method="post" class="form">
       <div style="display: none;">
         <input name="account" type="hidden" id="account" value="<%= valueType %>">
         <input name="lat" type="hidden" id="lat">

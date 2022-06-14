@@ -36,7 +36,7 @@ const routes = require("./routes/userRoutes");
 app.use(express.json());
 app.use(
   express.urlencoded({
-    extended: true,
+    extended: true
   })
 );
 
