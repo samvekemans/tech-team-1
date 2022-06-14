@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="login">
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <main>
+        <% if (messages.error) {%>
+        <p><%= messages.error%> <%}%></p>
+        <form action="/login" method="post">
+            <input type="email" name="email" id="email" placeholder="email adres" autocomplete="email">
+            <input type="password" name="password" id="password" placeholder="password" autocomplete="current-password">
+            <button type="submit">Inloggen</button>
+        </form>
+    </main>
+
+</body>
+
+</html>
