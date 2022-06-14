@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%- include('../partials/head'); %>
 </head>
 
 <body>
-<header>
-  <%- include('../partials/header'); %>
-</header>
+  <header>
+    <%- include('../partials/header'); %>
+  </header>
 
-<main class="user-detail">
+  <main class="user-detail">
     <img src="<%= user.image %> " alt="">
     <h1><%= user.name %></h1>
     <p><strong>Over <%= user.name %>:</strong> <%= user.aboutUser %> </p>
@@ -18,23 +19,24 @@
     <p><strong>Straat:</strong> <%= user.street %></p>
     <p><strong>Huisnummer:</strong> <%= user.houseNumber %> </p>
     <article>
-        <p><strong><%= careTradesTitle %></strong></p>
-        <article>
-          <% user.careTrades.forEach((careTrade)=> { %>
-              <img src="/images/<%= careTrade %>.png" alt="icon">
-          <% }); %> 
-        </article>
+      <p><strong><%= careTradesTitle %></strong></p>
+      <article>
+        <% user.careGiverTrades.forEach((careTrade)=> { %>
+        <img src="/images/<%= careTrade %>.png" alt="icon">
+        <% }); %>
       </article>
-      <div id="map" style="height: 400px; width: 100%;"></div>
-</main>
-<input type="hidden" value="<%= user.lat %>" id="lat">
-<input type="hidden" value="<%= user.lng %>" id="lng">
-<footer>
-  <%- include('../partials/footer'); %>
-</footer>
-<script async
+    </article>
+    <div id="map" style="height: 400px; width: 100%;"></div>
+  </main>
+  <input type="hidden" value="<%= user.lat %>" id="lat">
+  <input type="hidden" value="<%= user.lon %>" id="lng">
+  <footer>
+    <%- include('../partials/footer'); %>
+  </footer>
+  <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG0TS1HiOvZFbjpnuuzypOqfPRQedy5OQ&callback=initMap">
-</script>
-<script type="text/javascript" src="/scripts/user-details.js"></script>
+  </script>
+  <script type="text/javascript" src="/scripts/user-details.js"></script>
 </body>
-</html> 
+
+</html>
