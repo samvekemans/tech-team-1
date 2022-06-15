@@ -15,7 +15,14 @@ function initialize2(passport, getEmail, GetId) {
 		}
 		try {
 			if (await bcrypt.compare(password, user.hashedPassword)) {
-				return done(null, user);
+				if (user.verified == "notVerified") {
+					return done(null, false, {
+						message:
+							"Kijk in je mailbox, en verifieer de gebruiker",
+					});
+				} else {
+					return done(null, user);
+				}
 			} else {
 				return done(null, false, {
 					message: "Fout wachtwoord",
