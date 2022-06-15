@@ -15,6 +15,6 @@ function initMap() {
   const marker = new google.maps.Marker({
     position,
     map,
-  });
+  });gi
 }
 window.initMap = initMap;
