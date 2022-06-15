@@ -1,36 +1,31 @@
 const nodemailer = require("nodemailer");
+const dotenv = require("dotenv").config();
 
-const transporter = nodemailer.createTransport({
-	service: "gmail",
-});
+function sendMail(email) {
+	const transporter = nodemailer.createTransport({
+		host: "smtp.transip.email",
+		port: 465,
+		secure: true,
+		auth: {
+			user: `${process.env.MAIL_ADRESS}`,
+			pass: `${process.env.MAIL_PASSWORD}`,
+		},
+	});
 
-const transporter2 = nodemailer.createTransport({
-	host: "smtp.transip.email",
-	port: 465,
-	secure: true,
-	auth: {
-		user: "careforyou@stefanradouane.nl",
-		pass: "Careforyou123",
-	},
-});
+	var mailOptions = {
+		from: `CareForYou <${process.env.MAIL_ADRESS}>`,
+		to: `${email}`,
+		subject: "Sending email",
+		text: "Je hebt geprobeerd een account aan te maken",
+	};
 
-// Server:
-//
-// SSL: ingeschakeld
-// Gebruikersnaam: je e-mailadres
-// Wachtwoord: het wachtwoord dat je voor dit e-mailadres hebt ingesteld
+	transporter.sendMail(mailOptions, function (error, info) {
+		if (error) {
+			console.log(error);
+		} else {
+			console.log("email send" + info.response);
+		}
+	});
+}
 
-var mailOptions = {
-	from: "careforyou@stefanradouane.nl",
-	to: "stefanradouane@ziggo.nl",
-	subject: "Sending email",
-	text: "testje",
-};
-
-transporter2.sendMail(mailOptions, function (error, info) {
-	if (error) {
-		console.log(error);
-	} else {
-		console.log("email send" + info.response);
-	}
-});
+module.exports = sendMail;
