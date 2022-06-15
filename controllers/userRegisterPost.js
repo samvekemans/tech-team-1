@@ -3,6 +3,7 @@ const User = require("../models/user");
 const sendMail = require("../config/nodemailer");
 
 const register_post = async (req, res) => {
+    // Constante uit de req.body
     const {
         account,
         lat,
@@ -22,7 +23,11 @@ const register_post = async (req, res) => {
         oldPersonTrades,
         careGiverTrades,
     } = req.body;
+    // Wachtwoord encrypten
     const hashedPassword = await bcrypt.hash(password, 10);
+    // Functie uit video
+    // https://www.youtube.com/watch?v=CEim3tZsp1Y
+    // Tijd mee bezig ongeveer 40 min
     const verified = "notVerified";
     try {
         const user = await User.create({

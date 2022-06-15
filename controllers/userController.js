@@ -32,9 +32,7 @@ const user_detail = async (req, res) => {
     });
 };
 
-
 const user_register = require('./userRegister')
-
 
 // const user_register = (req, res) => {
 //     const iconTitles = {
