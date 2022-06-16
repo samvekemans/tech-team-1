@@ -1,73 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 
-*,html{
+*,
+html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-p, label, legend, fieldset, textarea, button, li, h1{
+p,
+label,
+legend,
+fieldset,
+textarea,
+button,
+li,
+h1 {
   font-family: 'Roboto', sans-serif;
 }
 
 // styling van de header
-header>nav>a>img:first-of-type{
+header>nav>a>img:first-of-type {
   max-height: 5em;
 }
 
-header>nav>a:nth-child(2)>img{
+header>nav>a:nth-child(2)>img {
   max-height: 3.7em;
   border-radius: 100%;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.429);
 }
 
-header{
+header {
   padding: .3em 1.3em;
   background-color: #F2D6CA;
 }
 
-header>nav{
+header>nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 // Styling van de index page
-.index{
+.index {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.index main{
+.index main {
   max-width: 50em;
   margin: auto;
   position: relative;
 }
 
-.index main>section{
+.index main>section {
   background-color: #f2d6ca48;
   padding: 10%;
 }
 
-.index main>section>h1{
+.index main>section>h1 {
   font-family: 'Bungee Shade', cursive;
   font-size: 3.75em;
 }
 
-.index main>section>p{
+.index main>section>p {
   font-family: 'Roboto', sans-serif;
   font-size: 1.3em;
   margin-bottom: 1.9em;
 }
 
-.index main>section>p:first-of-type{
+.index main>section>p:first-of-type {
   margin: .7em 0em;
 }
 
-.index main>section>a{
+.index main>section>a {
   padding: .7em;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
@@ -77,11 +85,11 @@ header>nav{
 }
 
 // Styling van de register pagina
-.pictureInput{
+.pictureInput {
   display: none;
 }
 
-.register>main>form{
+.register>main>form {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 2em;
@@ -89,47 +97,47 @@ header>nav{
   gap: 1em 0em;
 }
 
-.register>main>form>article{
+.register>main>form>article {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.register>main>form>article>input{
+.register>main>form>article>input {
   height: 2em;
   font-size: 1em;
 }
 
-.register>main>form>article>textarea{
+.register>main>form>article>textarea {
   height: 5em;
   font-size: 1em;
   padding: .2em;
   resize: none;
 }
 
-.register>main>form>article>label{
+.register>main>form>article>label {
   font-weight: bold;
 }
 
-.register>main>form>article:first-of-type{
+.register>main>form>article:first-of-type {
   grid-row: span 3;
   margin-right: 1em;
 }
 
-.register>main>form>article:first-of-type>label{
+.register>main>form>article:first-of-type>label {
   cursor: pointer;
 }
 
-.register>main>form>article:nth-child(3){
+.register>main>form>article:nth-child(3) {
   grid-column: span 2;
   margin-right: .5em;
 }
 
-.register>main>form>article:nth-child(5){
+.register>main>form>article:nth-child(5) {
   grid-column: span 3;
 }
 
-.register>main>form>fieldset{
+.register>main>form>fieldset {
   grid-column: span 3;
   border: none;
   gap: 1em;
@@ -137,39 +145,40 @@ header>nav{
   align-items: center;
 }
 
-.register>main>form>fieldset>input, .register>main>form>fieldset>label{
+.register>main>form>fieldset>input,
+.register>main>form>fieldset>label {
   cursor: pointer;
 }
 
-.register>main>form>fieldset>input{
+.register>main>form>fieldset>input {
   height: 2em;
   width: 2em;
 }
 
-.register>main>form>fieldset>label{
+.register>main>form>fieldset>label {
   font-size: 1.5em;
 }
 
-.register>main>form>fieldset>legend{
+.register>main>form>fieldset>legend {
   font-weight: bold;
   margin-bottom: .2em;
 }
 
-.register>main>form>section{
+.register>main>form>section {
   grid-column: span 5;
   margin: 1em 0em;
 }
 
-.register>main>form>section>article>label{
+.register>main>form>section>article>label {
   cursor: pointer;
 }
 
-.register>main>form>section>p{
+.register>main>form>section>p {
   margin-bottom: 1em;
   font-weight: bold;
 }
 
-.register>main>form>button{
+.register>main>form>button {
   grid-column: span 5;
   margin-left: auto;
   padding: 1em 2em;
@@ -180,16 +189,16 @@ header>nav{
   cursor: pointer;
   text-align: end;
 
-  &:hover{
+  &:hover {
     box-shadow: #519188 0px 0px 5px;
   }
 }
 
-.register>main>article:first-of-type>a{
+.register>main>article:first-of-type>a {
   position: relative;
 }
 
-.register>main>article:first-of-type>a:hover::after{
+.register>main>article:first-of-type>a:hover::after {
   content: '';
   top: 100%;
   left: 0px;
@@ -204,7 +213,7 @@ header>nav{
   border-width: 10px;
 }
 
-.selected::after{
+.selected::after {
   content: '';
   top: 100%;
   left: 0px;
@@ -219,18 +228,19 @@ header>nav{
   border-width: 10px;
 }
 
-.register>main{
+.register>main {
   max-width: 50em;
   margin: auto;
   margin-top: 20px;
 }
 
-.register>main>article:first-of-type{
+.register>main>article:first-of-type {
   display: flex;
   justify-content: center;
   gap: 1em;
 }
-.register>main>article:first-of-type>a{
+
+.register>main>article:first-of-type>a {
   width: 12.5em;
   padding: 1em;
   border-radius: .5em;
@@ -242,7 +252,7 @@ header>nav{
   border: #519188 3px solid;
 }
 
-.register>main>form>section>article{
+.register>main>form>section>article {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -250,13 +260,13 @@ header>nav{
 }
 
 .register>main>form>section>article>input:checked {
-    + label {
-      background-color: #519188;
-      box-shadow: 0px 0px 20px #519188;
-    }
+  +label {
+    background-color: #519188;
+    box-shadow: 0px 0px 20px #519188;
+  }
 }
 
-.register>main>form>section>article>label{
+.register>main>form>section>article>label {
   width: 8em;
   display: flex;
   flex-direction: column;
@@ -265,60 +275,60 @@ header>nav{
   padding: 1em;
   border-radius: .3em;
 
-  &:hover{
+  &:hover {
     box-shadow: 0px 0px 20px #519188;
-  } 
+  }
 }
 
-.register>main>form>section>article>label>img{
+.register>main>form>section>article>label>img {
   max-height: 6em;
   height: auto;
 }
 
-.register>main>form>section:first-of-type{
+.register>main>form>section:first-of-type {
   grid-column: span 4;
   display: flex;
 }
 
-.register>main>form>section:first-of-type>article:first-of-type{
+.register>main>form>section:first-of-type>article:first-of-type {
   display: flex;
   flex-direction: column;
   gap: .5em;
 }
 
-.register>main>form>section:first-of-type>article:first-of-type>label{
+.register>main>form>section:first-of-type>article:first-of-type>label {
   box-shadow: none;
   padding: 0em;
   flex-direction: row;
 }
 
-.pElement{
+.pElement {
   color: red;
   text-align: center;
   margin-top: 2em;
 }
 
-.register>main>form>section:first-of-type>article:nth-child(2){
+.register>main>form>section:first-of-type>article:nth-child(2) {
   display: flex;
   flex-direction: column;
   padding: .5em;
   margin-left: 2em;
 }
 
-.register>main>form>section>article:nth-child(2)>p{
+.register>main>form>section>article:nth-child(2)>p {
   font-size: 1.3em;
 }
 
-.register>main>form>section input{
+.register>main>form>section input {
   height: 2.5em;
   width: 20em;
 }
 
-.register>main>form>section label{
+.register>main>form>section label {
   font-weight: bold;
 }
 
-.adress{
+.adress {
   padding: .2em 1em;
   background-color: #519188;
   border-radius: 5px;
@@ -328,16 +338,17 @@ header>nav{
 
 
 //users styling
-.users>main{
+.users>main {
   display: flex;
   flex-direction: column;
 }
-.users>main>article{
+
+.users>main>article {
   display: flex;
   justify-content: center;
 }
 
-.users>main>section{
+.users>main>section {
   max-width: 60em;
   margin: auto;
   margin-top: 20px;
@@ -350,23 +361,23 @@ header>nav{
   scroll-behavior: smooth;
 }
 
-.users>main>section>section h1{
+.users>main>section>section h1 {
   font-size: 2em;
   font-family: 'Roboto Mono', monospace;
 }
 
-.users>main>section>section{
+.users>main>section>section {
   position: relative;
   padding: 2em 3em;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.221);
   border-radius: 5px;
 
-  &:hover{
+  &:hover {
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.654);
   }
 }
 
-.users>main>section>section>a{
+.users>main>section>section>a {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -374,40 +385,40 @@ header>nav{
   color: black;
 }
 
-.users>main>section>section>a>article>ul>li{
+.users>main>section>section>a>article>ul>li {
   margin-left: .7em;
 }
 
-.users>main>section>section>a>article:nth-child(2)>p:first-of-type{
+.users>main>section>section>a>article:nth-child(2)>p:first-of-type {
   margin-bottom: 1em;
 }
 
-.users>main>section>section>a>article:nth-child(2)>ul{
+.users>main>section>section>a>article:nth-child(2)>ul {
   display: flex;
   gap: 1em;
 }
 
-.users>main>section>section>a>article:first-of-type{
+.users>main>section>section>a>article:first-of-type {
   width: 20em;
   display: flex;
   justify-content: space-between;
 }
 
-.users>main>section>section>a>article>div{
-  background-position: center; 
-  background-size: cover; 
-  background-repeat: no-repeat; 
+.users>main>section>section>a>article>div {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 150px;
   height: 150px;
   box-shadow: #519188 3px 3px 5px;
   margin-bottom: 1em;
 }
 
-.users span{
+.users span {
   display: block;
 }
 
-.users>main>section>section>a>article:nth-child(3) ul{
+.users>main>section>section>a>article:nth-child(3) ul {
   display: flex;
   gap: 1em;
   flex-direction: row;
@@ -416,21 +427,21 @@ header>nav{
   margin-top: .5em;
 }
 
-.users>main>section>section>a>article ul img{
+.users>main>section>section>a>article ul img {
   width: 2.2em;
   height: 2.2em;
   padding: .2em;
 }
 
-.users>main>section>section>a>article>img{
+.users>main>section>section>a>article>img {
   display: none;
 }
 
-.users>main>section>section>a>article>p>strong{
+.users>main>section>section>a>article>p>strong {
   font-size: 1.1em;
 }
 
-.next{
+.next {
   background-color: #519188;
   color: wheat;
   border: none;
@@ -438,12 +449,12 @@ header>nav{
   margin-left: 1em;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     box-shadow: #519188 0px 0px 10px;
   }
 }
 
-.previous{
+.previous {
   background-color: #519188;
   color: wheat;
   border: none;
@@ -451,12 +462,12 @@ header>nav{
   margin-right: 1em;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     box-shadow: #519188 0px 0px 10px;
   }
 }
 
-.user-detail{
+.user-detail {
   max-width: 50em;
   margin: auto;
   display: flex;
@@ -465,19 +476,45 @@ header>nav{
   gap: 1em;
 }
 
-.user-detail img{
+.user-detail img {
   width: 10em;
   margin-top: 2em;
   margin-bottom: 2em;
   border-radius: 5px;
 }
 
-.user-detail>article>article{
+.user-detail>article>article {
   display: flex;
   gap: 2em;
 }
 
-.user-detail>article>article img{
+.user-detail>article>article img {
   width: 4em;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5em;
+
+  section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    a {
+      color: #519188;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -30,6 +30,9 @@ const session = require('express-session');
 // Routes
 const routes = require('./routes/userRoutes');
 
+// Method override
+const methodOverride = require("method-override");
+
 /** *****************************************************
  * Middleware
  ******************************************************* */
@@ -57,6 +60,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(methodOverride("_method"));
 /** *****************************************************
  * Set template engine
  ******************************************************* */

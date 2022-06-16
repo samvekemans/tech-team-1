@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="profiel">
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+
+    <main class="user-detail">
+        <img src="<%= user.pictureUser %> " alt="">
+        <h1><%= user.name %></h1>
+        <p><strong>Over <%= user.name %>:</strong> <%= user.description %> </p>
+        <p><strong>adres:</strong></p>
+        <p><strong>Stad:</strong> <%= user.city %></p>
+        <p><strong>Straat:</strong> <%= user.street %></p>
+        <p><strong>Huisnummer:</strong> <%= user.houseNumber %> </p>
+        <article>
+            <p><strong><%= careTradesTitle %></strong></p>
+            <article>
+                <% user.careGiverTrades.forEach((careTrade)=> { %>
+                <img src="/images/<%= careTrade %>.png" alt="icon">
+                <% }); %>
+            </article>
+        </article>
+        <form action="/logout?_method=DELETE" method="POST">
+            <button type="submit">Log out</button>
+        </form>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>

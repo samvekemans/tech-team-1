@@ -34,7 +34,7 @@ const user_detail = async (req, res) => {
 
 const user_register = require('./userRegister')
 const user_activate = require('./activateAccount')
-
+const user_profiel = require('./userProfiel')
 // const user_register = (req, res) => {
 //     const iconTitles = {
 //         first: "Welke eigenschappen verwacht je van de zorgmedewerker?",
@@ -135,6 +135,8 @@ const user_error = (req, res) => {
     res.render("pages/error");
 };
 
+const user_logout = require('./userLogOut')
+
 module.exports = {
     user_index,
     user_detail,
@@ -144,5 +146,7 @@ module.exports = {
     user_register_post,
     user_login,
     user_error,
-    user_activate
+    user_activate,
+    user_logout,
+    user_profiel
 };
