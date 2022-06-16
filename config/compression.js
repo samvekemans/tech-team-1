@@ -16,7 +16,7 @@ function startCompress() {
     filter: (req, res) => {
       if (req.headers['x-no-compression']) {
         return false
-      };
+      }
       // fallback naar de standaard filter
       return compression.filter(req, res);
     },
@@ -24,7 +24,7 @@ function startCompress() {
 };
 
 
-// server-sent event stream voor als de webpagina automatisch updates krijgt
+// server-sent event stream voor als de webpagina automatisch updates krijgt (niet duidelijk of dit van toepassing is in het project)
 app.get('/events', (req, res) => {
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
