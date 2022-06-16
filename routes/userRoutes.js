@@ -20,13 +20,14 @@ const checkLogged = passportConfig.checkAuthenticated;
 const checkNotLogged = passportConfig.checkNotAuthenticated;
 
 passportConfig.initialize2(
-  passport,
-  async (email) =>
-    // eslint-disable-next-line no-return-await
-    await User.findOne({
-      email,
-    }),
-  (id) => id
+    passport,
+    async (email) =>
+        await User.findOne({
+            email: email,
+        }),
+        (id) => {
+            return id;
+        }
 );
 
 // Routes
@@ -37,6 +38,8 @@ router.get('/', (req, res) => {
 router.get('/start', checkNotLogged, useController.user_index);
 
 router.get('/users/:userId', checkLogged, useController.user_detail);
+router.get("/account/verify/:token", useController.user_activate);
+
 
 router.get('/users', checkLogged, useController.user_users);
 
