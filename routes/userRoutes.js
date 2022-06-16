@@ -53,4 +53,6 @@ router.get("/error", useController.user_error);
 
 router.delete("/logout", useController.user_logout);
 
+router.get("/profiel", checkLogged, useController.user_profiel);
+
 module.exports = router;
