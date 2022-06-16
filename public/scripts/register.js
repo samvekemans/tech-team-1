@@ -99,7 +99,7 @@ adressButton.addEventListener('click', async () => {
 });
 
 function styleButton() {
-  if (window.location.pathname === '/ouderen') {
+  if (window.location.pathname === '/register') {
     oldButton.style.backgroundColor = '#519188';
     oldButton.style.boxShadow = '0px 0px 5px #519188';
     oldButton.style.fontWeight = 'bold';
@@ -109,7 +109,7 @@ function styleButton() {
     careButton.style.boxShadow = 'none';
     careButton.style.fontWeight = 'normal';
   }
-  if (window.location.pathname === '/zorgmedewerker') {
+  if (window.location.pathname === '/register-zorg') {
     careButton.style.backgroundColor = '#519188';
     careButton.style.boxShadow = '0px 0px 5px #519188';
     careButton.style.fontWeight = 'bold';
