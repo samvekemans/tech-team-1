@@ -11,6 +11,8 @@ const passportConfig = require("../config/passport-config");
 
 const User = require("../models/user");
 
+const upload = require("../config/multer");
+
 // // Link naar Multer config.
 // const {
 //     storage
@@ -44,7 +46,7 @@ router.get("/users", checkLogged, useController.user_users);
 
 router.get("/register", checkNotLogged, useController.user_register);
 router.get("/register-zorg", checkNotLogged, useController.user_register_zorg);
-router.post("/register", checkNotLogged, useController.user_register_post);
+router.post("/register", checkNotLogged, upload.single('pictureUser'), useController.user_register_post);
 
 router.get("/login", checkNotLogged, useController.user_login);
 router.post("/login", checkNotLogged, passportConfig.login);

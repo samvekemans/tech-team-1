@@ -15,7 +15,6 @@ const register_post = async (req, res) => {
         age,
         description,
         help,
-        pictureUser,
         zipcode,
         houseNumber,
         province,
@@ -29,10 +28,12 @@ const register_post = async (req, res) => {
         email,
     }).exec(async (err, user) => {
         if (user) {
+            // Veranderen in een pagina of iets?
             return res.status(400).json({
                 error: "User already exist",
             });
         } else {
+            const pictureUser = `uploads/${req.file.filename}`;
             const hashedPassword = await bcrypt.hash(password, 10);
             const verified = "notVerified";
             try {
