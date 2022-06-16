@@ -1,7 +1,7 @@
-const LocalStrategy = require("passport-local").Strategy;
-const bcrypt = require("bcrypt");
+const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcrypt');
 
-const passport = require("passport");
+const passport = require('passport');
 // const flash = require("express-flash");
 // const session = require("express-session");
 
@@ -47,26 +47,26 @@ function initialize2(passport, getEmail, GetId) {
 	});
 }
 
-const login = passport.authenticate("local", {
-	successRedirect: "/",
-	failureRedirect: "/login",
-	session: true,
-	failureFlash: true,
+const login = passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/login',
+  session: true,
+  failureFlash: true,
 });
 
 function checkAuthenticated(req, res, next) {
-	if (req.isAuthenticated()) {
-		return next();
-	}
+  if (req.isAuthenticated()) {
+    return next();
+  }
 
-	res.redirect("/login");
+  res.redirect('/login');
 }
 
 function checkNotAuthenticated(req, res, next) {
-	if (req.isAuthenticated()) {
-		return res.redirect("/users");
-	}
-	next();
+  if (req.isAuthenticated()) {
+    return res.redirect('/users');
+  }
+  next();
 }
 
 module.exports = {
