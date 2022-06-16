@@ -20,19 +20,19 @@ const checkLogged = passportConfig.checkAuthenticated;
 const checkNotLogged = passportConfig.checkNotAuthenticated;
 
 passportConfig.initialize2(
-	passport,
-	async (email) =>
-		await User.findOne({
-			email: email,
-		}),
-	(id) => {
-		return id;
-	}
+    passport,
+    async (email) =>
+        await User.findOne({
+            email: email,
+        }),
+        (id) => {
+            return id;
+        }
 );
 
 // Routes
 router.get("/", (req, res) => {
-	res.redirect("/start");
+    res.redirect("/start");
 });
 
 router.get("/start", checkNotLogged, useController.user_index);
@@ -51,6 +51,6 @@ router.post("/login", checkNotLogged, passportConfig.login);
 
 router.get("/error", useController.user_error);
 
-router.post("/logout", useController.user_logout);
+router.delete("/logout", useController.user_logout);
 
 module.exports = router;
