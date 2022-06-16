@@ -1,4 +1,4 @@
-// Require compress
+// Require compression
 const compression = require('compression');
 
 // aanroepen functie voor compression
