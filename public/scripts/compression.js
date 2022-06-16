@@ -1,12 +1,6 @@
 // Require compress
 const compression = require('compression');
 
-// require express
-const express = require('express');
-
-// express
-const app = express();
-
 // compressie van alle responses
 app.use(compression());
 
