@@ -20,8 +20,9 @@ const checkNotLogged = passportConfig.checkNotAuthenticated;
 
 passportConfig.initialize2(
     passport,
-    async (email) => await User.findOne({
-            email: email
+    async (email) =>
+        await User.findOne({
+            email: email,
         }),
         (id) => {
             return id;
@@ -35,7 +36,9 @@ router.get("/", (req, res) => {
 
 router.get("/start", checkNotLogged, useController.user_index);
 
-router.get("/users/:userId", checkLogged, useController.user_detail);
+router.get("/users/:userId", useController.user_detail);
+
+router.get("/account/verify/:token", useController.user_activate);
 
 router.get("/users", checkLogged, useController.user_users);
 

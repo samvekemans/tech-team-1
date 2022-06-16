@@ -33,6 +33,7 @@ const user_detail = async (req, res) => {
 };
 
 const user_register = require('./userRegister')
+const user_activate = require('./activateAccount')
 
 // const user_register = (req, res) => {
 //     const iconTitles = {
@@ -143,4 +144,5 @@ module.exports = {
     user_register_post,
     user_login,
     user_error,
+    user_activate
 };

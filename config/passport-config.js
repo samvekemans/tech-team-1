@@ -17,10 +17,9 @@ function initialize2(passport, getEmail, GetId) {
 			if (await bcrypt.compare(password, user.hashedPassword)) {
 				if (user.verified == "notVerified") {
 					return done(null, false, {
-						message:
-							"Kijk in je mailbox, en verifieer de gebruiker",
+						message: "Kijk in je mailbox, en verifieer de gebruiker",
 					});
-				} else {
+				} else if (user.verified == "verified") {
 					return done(null, user);
 				}
 			} else {
@@ -34,8 +33,7 @@ function initialize2(passport, getEmail, GetId) {
 	};
 
 	passport.use(
-		new LocalStrategy(
-			{
+		new LocalStrategy({
 				usernameField: "email",
 			},
 			authenticateUser2
