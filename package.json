@@ -4,7 +4,7 @@
   "description": "first project",
   "main": "server.js",
   "scripts": {
-    "test": "vows --spec",
+    "test": "node server.js",
     "start": "node server.js",
     "dev": "nodemon . & npm run scss",
     "scss": "sass --watch src/scss/main.scss public/styles/main.css",
