@@ -135,6 +135,8 @@ const user_error = (req, res) => {
     res.render("pages/error");
 };
 
+const user_logout = require('./userLogOut')
+
 module.exports = {
     user_index,
     user_detail,
@@ -144,5 +146,6 @@ module.exports = {
     user_register_post,
     user_login,
     user_error,
-    user_activate
+    user_activate,
+    user_logout
 };
