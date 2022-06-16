@@ -1,12 +1,13 @@
-/*******************************************************
+/** *****************************************************
  * Define some constants and variables
- ********************************************************/
+ ******************************************************* */
 
 // This makes variables from .env file available in my code
-const dotenv = require("dotenv").config();
+const dotenv = require('dotenv').config();
 
 // Express
-const express = require("express");
+const express = require('express');
+
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -14,29 +15,29 @@ const port = process.env.PORT || 3000;
 // const path = require("path");
 
 // mongoose / mongodb
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const connectDB = require("./config/dbConnect");
+const connectDB = require('./config/dbConnect');
+
 connectDB();
 
-const passport = require("passport");
-const flash = require("express-flash");
-const session = require("express-session");
+const passport = require('passport');
+const flash = require('express-flash');
+const session = require('express-session');
 
 // config map checken.
 
 // Routes
-const routes = require("./routes/userRoutes");
+const routes = require('./routes/userRoutes');
 
-
-/*******************************************************
+/** *****************************************************
  * Middleware
- ********************************************************/
+ ******************************************************* */
 // Express body-parser
 app.use(express.json());
 app.use(
   express.urlencoded({
-    extended: true
+    extended: true,
   })
 );
 
@@ -47,7 +48,7 @@ app.use(express.static(`${__dirname}/public`));
 app.use(flash());
 app.use(
   session({
-    secret: "secret",
+    secret: 'secret',
     resave: false,
     saveUnitialized: false,
   })
@@ -56,28 +57,28 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-/*******************************************************
+/** *****************************************************
  * Set template engine
- ********************************************************/
-app.set("view engine", "ejs");
+ ******************************************************* */
+app.set('view engine', 'ejs');
 
-/*******************************************************
+/** *****************************************************
  * Routes
- ********************************************************/
+ ******************************************************* */
 app.use(routes);
 
-/*******************************************************
+/** *****************************************************
  * If no routes give response, show 404
- ********************************************************/
+ ******************************************************* */
 app.use((req, res) => {
   res.status(404);
-  res.redirect("/error");
+  res.redirect('/error');
 });
 
-/*******************************************************
+/** *****************************************************
  * Start webserver
- ********************************************************/
-mongoose.connection.once("open", () => {
-  console.log("Connected to MongoDB");
+ ******************************************************* */
+mongoose.connection.once('open', () => {
+  console.log('Connected to MongoDB');
   app.listen(port, () => console.log(`Server running on port ${port}`));
 });
