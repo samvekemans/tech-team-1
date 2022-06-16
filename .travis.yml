@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - 16
-  - node
 
 scripts:
   - npm run lint
+  - npm test
