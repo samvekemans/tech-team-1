@@ -20,7 +20,7 @@ function sendMail(user) {
 		subject: "Activate account",
 		html: `
             <h2>Klik op de link om je account te activeren</h2>
-            <a href="localhost:3000/account/${token}">Account activeren</a>`,
+            <a href="http://localhost:3000/account/verify/${token}">Account activeren</a>`,
 	};
 
 	transporter.sendMail(mailOptions, function (error, info) {
