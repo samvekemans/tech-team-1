@@ -70,8 +70,8 @@ adressButton.addEventListener("click", async () => {
 	if (zipCode.value && houseNumber.value) {
 		zipCode.value.toUpperCase();
 		fetch(
-			`http://api.postcodedata.nl/v1/postcode/?postcode=${zipCode.value}&streetnumber=${houseNumber.value}&ref=domeinnaam.nl&type=json`
-		)
+				`http://api.postcodedata.nl/v1/postcode/?postcode=${zipCode.value}&streetnumber=${houseNumber.value}&ref=domeinnaam.nl&type=json`
+			)
 			.then((response) => response.json())
 			.then((apiData) => {
 				const data = apiData;

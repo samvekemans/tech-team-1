@@ -1,26 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 5em;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 5em;
 
-    section {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-        height: 100%;
+	section {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		width: 100%;
+		height: 100%;
 
-        a {
-            color: #519188;
-            font-size: 20px;
-            font-weight: bold;
-            text-decoration: none;
+		a {
+			color: #519188;
+			font-size: 20px;
+			font-weight: bold;
+			text-decoration: none;
 
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
 }
