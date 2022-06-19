@@ -11,30 +11,60 @@
     </header>
 
 
-    <main class="user-detail">
-        <img src="<%= user.pictureUser %> " alt="">
-        <h1><%= user.name %></h1>
-        <p><strong>Over <%= user.name %>:</strong> <%= user.description %> </p>
-        <p><strong>adres:</strong></p>
-        <p><strong>Stad:</strong> <%= user.city %></p>
-        <p><strong>Straat:</strong> <%= user.street %></p>
-        <p><strong>Huisnummer:</strong> <%= user.houseNumber %> </p>
-        <article>
-            <p><strong><%= careTradesTitle %></strong></p>
+    <main>
+        <section class="sidebar">
+            <img src="<%= user.pictureUser %>" alt="">
+            <section class="info">
+                <h2><%= user.name %> <span><%= user.age %></span></h2>
+                <section>
+                    <p><strong>Over mij:</strong>
+                        <p><%= user.description %></p>
+                </section>
+                <section>
+                    <p><strong>Ik ben op zoek naar:</strong>
+                        <ul>
+                            <% user.help.forEach(function(help){ %>
+                            <li><%= help %></li>
+                            <% }) %>
+                        </ul>
+                </section>
+            </section>
+            <form action="/logout?_method=DELETE" method="POST">
+                <button type="submit">Log out</button>
+            </form>
+        </section>
+        <section class="content">
             <article>
-                <% user.careGiverTrades.forEach((careTrade)=> { %>
-                <img src="/images/<%= careTrade %>.png" alt="icon">
-                <% }); %>
+                <h2><%= careTradesTitle %></h2>
+                <article>
+                    <% user.careGiverTrades.forEach((careTrade)=> { %>
+                    <img src="/images/<%= careTrade %>.png" alt="icon">
+                    <% }); %>
+                </article>
             </article>
-        </article>
-        <form action="/logout?_method=DELETE" method="POST">
-            <button type="submit">Log out</button>
-        </form>
+            <section class="map">
+                <section>
+                    <h2>Mijn Adres:</h2>
+                    <p><strong>Stad:</strong> <%= user.city %></p>
+                    <p><strong>Straat:</strong> <%= user.street %></p>
+                    <p><strong>Huisnummer:</strong> <%= user.houseNumber %> </p>
+                </section>
+                <div id="map" style="height: 100%; width: 50%;"></div>
+            </section>
+        </section>
+
     </main>
+    <input type="hidden" value="<%= user.lat %>" id="lat">
+    <input type="hidden" value="<%= user.lon %>" id="lng">
 
     <footer>
         <%- include('../partials/footer'); %>
     </footer>
+
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG0TS1HiOvZFbjpnuuzypOqfPRQedy5OQ&callback=initMap">
+    </script>
+    <script type="text/javascript" src="/scripts/user-details.js"></script>
 
 </body>
 
