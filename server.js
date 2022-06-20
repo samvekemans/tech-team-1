@@ -17,7 +17,6 @@ const port = process.env.PORT || 3000;
 // mongoose / mongodb
 const mongoose = require('mongoose');
 
-
 const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
