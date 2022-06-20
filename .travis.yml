@@ -6,6 +6,8 @@ scripts:
 
 before_deploy:
   - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
+
+deploy_job:
 deploy:
   provider: heroku
   api_key:
@@ -15,3 +17,5 @@ deploy:
     repo: samvekemans/tech-team-1
     branch: main
   skip_cleanup: 'true'
+scripts:
+- npm install
