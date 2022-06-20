@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - 16
 scripts:
-- npm run lint:fix
+
 - npm test
 deploy:
   provider: heroku
