@@ -1,5 +1,6 @@
 // variabelen
 const { src, dest } = require('gulp');
+const webp = require('gulp-webp');
 
 // importeren van gulp
 import gulp from 'gulp';
@@ -19,6 +20,7 @@ export default () => (
             gifsicle({interlaced: true}),
             mozjpeg({quality: 75, progressive: true}),
             optipng({optimizationLevel: 5}),
+            imageminWebp({quality: 75, method: 3}),
             svgo({
                 plugins: [
                     {
@@ -31,15 +33,12 @@ export default () => (
                     }
                 ]
             })
-            (async () => {
-                await imagemin(['./public/images/*.{jpg,png}'], {
-                    destination: 'build/images',
-                    plugins: [
-                        imageminWebp({quality: 50})
-                    ]
-                });
-                console.log('Afbeeldingen geoptimaliseerd');
-            })()
         ]))
         .pipe(gulp.dest('dist/images'))
+);
+
+exports.default = () => (
+	gulp.src('./dist/images/*')
+		.pipe(webp())
+		.pipe(dest('dist/images'))
 );
