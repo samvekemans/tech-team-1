@@ -10,6 +10,9 @@ import imagemin from 'gulp-imagemin';
 // importeren standaard custom plugins van gulp-imagemin
 import imagemin, {gifsicle, mozjpeg, optipng, svgo} from 'gulp-imagemin';
 
+// importeren imageminWebp
+import imageminWebp from 'imagemin-webp';
+
 export default () => (
     gulp.src('./public/images/*')
         .pipe(imagemin([
@@ -28,6 +31,15 @@ export default () => (
                     }
                 ]
             })
+            (async () => {
+                await imagemin(['./public/images/*.{jpg,png}'], {
+                    destination: 'build/images',
+                    plugins: [
+                        imageminWebp({quality: 50})
+                    ]
+                });
+                console.log('Afbeeldingen geoptimaliseerd');
+            })()
         ]))
         .pipe(gulp.dest('dist/images'))
 );
