@@ -6,6 +6,7 @@ scripts:
 
 before_deploy:
   - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
+  - npm run gulp
 
 deploy:
   provider: heroku
