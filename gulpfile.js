@@ -41,3 +41,4 @@ exports.default = () => (
 		.pipe(webp())
 		.pipe(dest('public/images'))   
 );
+

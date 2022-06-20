@@ -9,7 +9,8 @@
     "dev": "nodemon . & npm run scss",
     "scss": "sass --watch src/scss/main.scss public/styles/main.css",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "gulp": "gulp"
   },
   "author": "Sam Vekemans",
   "license": "MIT",
