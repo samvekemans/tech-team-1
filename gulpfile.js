@@ -11,7 +11,7 @@ import imagemin, {gifsicle, mozjpeg, optipng, svgo} from 'gulp-imagemin';
 // importeren imageminWebp
 import imageminWebp from 'imagemin-webp';
 
-// minifying van de afbeeldingen die in /public/images staan en sturen naar /dist/images
+// minifying van de afbeeldingen die in /public/images staan en terugsturen naar dezelfde folder
 export default () => (
     gulp.src('public/images/*')
         .pipe(imagemin([
@@ -35,7 +35,7 @@ export default () => (
         .pipe(dest('public/images'))
 );
 
-// omzetten van images in /dist/images naar webp format en sturen naar dezelfde folder
+// omzetten van images in /public/images naar webp format en terugsturen naar dezelfde folder
 exports.default = () => (
 	gulp.src('public/images/*')
 		.pipe(webp())
