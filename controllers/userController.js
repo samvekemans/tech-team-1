@@ -9,6 +9,7 @@ const user_index = (req, res) => {
 };
 
 const user_users = require('./userUsers');
+const user_post = require('./userPost');
 const user_detail = require('./userDetail');
 const user_register = require('./userRegister');
 const user_register_zorg = require('./userRegisterZorg');
@@ -32,6 +33,7 @@ module.exports = {
   user_index,
   user_detail,
   user_users,
+  user_post,
   user_register,
   user_register_zorg,
   user_register_post,

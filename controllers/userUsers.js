@@ -1,16 +1,28 @@
-const User = require('../models/user');
+const User = require("../models/user");
 
-const user = async (req, res) => {
-  const query = {
-    accountType: 'ouderen',
-  };
-  const users = await User.find(query);
-  const oldTradesTitle = 'Mijn eigenschappen:';
-
-  res.render('pages/users', {
-    users,
-    oldTradesTitle,
-  });
+const users = async (req, res) => {
+    const activeAcc = await User.findById(req.user)
+    const accountType = activeAcc.account
+    let oldTradesTitle = "Mijn eigeschappen:";
+    if (accountType == "zorgmedewerker") {
+        const query = {
+            account: "ouderen",
+        };
+        const users = await User.find(query);
+        res.render("pages/users", {
+            users,
+            oldTradesTitle,
+        });
+    } else {
+        const query = {
+            account: "zorgmedewerker",
+        };
+        const users = await User.find(query);
+        res.render("pages/users", {
+            users,
+            oldTradesTitle,
+        });
+    }
 };
 
-module.exports = user;
+module.exports = users

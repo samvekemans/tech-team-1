@@ -41,6 +41,7 @@ router.get('/users/:userId', checkLogged, useController.user_detail);
 router.get('/account/verify/:token', useController.user_activate);
 
 router.get('/users', checkLogged, useController.user_users);
+router.post('/users', checkLogged, useController.user_post);
 
 router.get('/register', checkNotLogged, useController.user_register);
 router.get('/register-zorg', checkNotLogged, useController.user_register_zorg);

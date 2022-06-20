@@ -79,6 +79,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  likes: {
+    type: Array,
+    required: false,
+  },
 });
 
 const User = mongoose.model('User', userSchema);
