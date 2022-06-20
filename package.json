@@ -4,7 +4,6 @@
   "description": "first project",
   "main": "server.js",
   "scripts": {
-    "build":"gulp",
     "test": "node server.js",
     "start": "node server.js",
     "dev": "nodemon server.js",
