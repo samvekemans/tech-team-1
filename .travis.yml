@@ -3,5 +3,5 @@ node_js:
   - 16
 
 scripts:
-  - npm run lint
+  - npm run lint:fix
   - npm test

@@ -17,9 +17,6 @@ const port = process.env.PORT || 3000;
 // mongoose / mongodb
 const mongoose = require('mongoose');
 
-const connectDB = require('./config/dbConnect');
-
-connectDB();
 
 const passport = require('passport');
 const flash = require('express-flash');
@@ -28,10 +25,13 @@ const session = require('express-session');
 // config map checken.
 
 // Routes
+const methodOverride = require('method-override');
 const routes = require('./routes/userRoutes');
 
 // Method override
-const methodOverride = require("method-override");
+const connectDB = require('./config/dbConnect');
+
+connectDB();
 
 /** *****************************************************
  * Middleware
@@ -60,7 +60,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(methodOverride("_method"));
+app.use(methodOverride('_method'));
 /** *****************************************************
  * Set template engine
  ******************************************************* */
