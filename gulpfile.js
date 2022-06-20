@@ -5,10 +5,7 @@ const webp = require('gulp-webp');
 // importeren van gulp
 import gulp from 'gulp';
 
-// importeren van gulp-imagemin
-import imagemin from 'gulp-imagemin';
-
-// importeren standaard custom plugins van gulp-imagemin
+// importeren van imagemin en standaard custom plugins van gulp-imagemin
 import imagemin, {gifsicle, mozjpeg, optipng, svgo} from 'gulp-imagemin';
 
 // importeren imageminWebp
