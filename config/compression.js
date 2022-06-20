@@ -23,23 +23,4 @@ function startCompress() {
   }));
 };
 
-
-// server-sent event stream voor als de webpagina automatisch updates krijgt (niet duidelijk of dit van toepassing is in het project)
-app.get('/events', (req, res) => {
-  res.setHeader('Content-Type', 'text/event-stream');
-  res.setHeader('Cache-Control', 'no-cache');
-
-  // stuur elke 2 seconden een ping
-  const timer = setInterval(() => {
-    res.write('data; ping\n\n');
-
-    // de res.flush method forceert deels gecompresste responses om naar de client te worden geflushed
-    res.flush();
-  }, 2000);
-
-  res.on('close', () => {
-    clearInterval(timer);
-  });
-});
-
 module.exports = { startCompress };
