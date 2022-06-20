@@ -10,7 +10,7 @@
     "scss": "sass --watch src/scss/main.scss public/styles/main.css",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "gulp": "gulp, gulp"
+    "gulp": "gulp"
   },
   "author": "Sam Vekemans",
   "license": "MIT",

@@ -42,3 +42,4 @@ exports.default = () => (
 		.pipe(dest('public/images'))   
 );
 
+gulp
