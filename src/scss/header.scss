@@ -1,0 +1,14 @@
+// styling van de header
+header {
+	padding: 0.3em 1.3em;
+	background-color: #f2d6ca;
+
+    nav {
+		display: flex;
+		align-items: center;
+
+        img{
+            max-height: 5em;
+        }
+    }
+}
