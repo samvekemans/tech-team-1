@@ -1,0 +1,43 @@
+
+// Styling van de index page
+.index {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.index main {
+	max-width: 50em;
+	margin: auto;
+	position: relative;
+}
+
+.index main>section {
+	background-color: #f2d6ca48;
+	padding: 10%;
+}
+
+.index main>section>h1 {
+	font-family: "Bungee Shade", cursive;
+	font-size: 3.75em;
+}
+
+.index main>section>p {
+	font-family: "Roboto", sans-serif;
+	font-size: 1.3em;
+	margin-bottom: 1.9em;
+}
+
+.index main>section>p:first-of-type {
+	margin: 0.7em 0em;
+}
+
+.index main>section>a {
+	padding: 0.7em;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+	background-color: #519188;
+}
