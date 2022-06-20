@@ -7,8 +7,8 @@ scripts:
 before_deploy:
   - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
 
-deploy_job:
 deploy:
+  - 
   provider: heroku
   api_key:
     secure: s8JWVBj0EHyjhxfiIriDCTTDnYgosiCeUzOiYQuyYppTu7q6sF0dxxxbelc7xcvnnQ+25OeR+DMGNXLVdU8zB/eJh7aVluyHohNJj9aEKEYsq8ic97KA7tnBBbxwjeyOFVhuPWTzK5iGpduEz4mYQNm62BH2rZxdRLu4Dt33705I0XV8QIBtTHB4NLt2NCfKLZza9Ic40Yl6xwz4HYa+s/OGZlXUENyApN8C/IGTmdjL4VxrIWIB5OoAS4QAOyqkwpvdLeD1bTgxQ5BlR+/u8gPZp4BxnqruIGe31suHpgA79lQz8YIPnPfmW94pg3XJrraTXBrfKV7Sq3AV0x/AjgwpR8CWmaE1OzSn8TTjmvp9T/H1G2XiPQCkUGQeci5V8fodchLA0RBm/u7+h49Gy68O7QvuWa16iezHwxHbqZ05LZTDqn0Ms5OdfvsS7EqYdCGiq25CoYXbpe4a8BsEAfRjLYMNMmZyYoqHsppvG5q4NPxY5zB/Jybj4yRCcNHWms+53fCFPCzqwX3tzpbu/59e2r9xtvUG5taaBTQaB3vuhLZWHCHYCzFySa7q2FswPfGGwGoe+cLtJ9Y6E2bjWfkoUbmHDUIfcxHsp+rda5NqSd1FyoE8dmeFDN2z+YCCC5dwv63UXEJNYV77L3ODjavXJtHxxu6RnZItZ6WqXqs=
@@ -17,5 +17,3 @@ deploy:
     repo: samvekemans/tech-team-1
     branch: main
   skip_cleanup: 'true'
-scripts:
-- npm install
