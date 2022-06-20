@@ -42,5 +42,5 @@ export default () => (
 exports.default = () => (
 	gulp.src('public/images/*')
 		.pipe(webp())
-		.pipe(dest('public/images'))
+		.pipe(dest('public/images'))   
 );
