@@ -4,31 +4,37 @@ const arrayify = require('array-back')
 const userPost = async (req, res) => {
     // Constante van gebruiker en likes
     const idLoggedUser = req.user
-    const idLike = req.body.favorite
-
-   
+    const idLikedUser = req.body.favorite
 
     // ingelogde gebruiker ophalen met findById
     const user = await User.findById(idLoggedUser);
     // // Als de gebruiker likes heeft if uitvoeren
-    // if (user.likes) {
+    if (user.likes) {
 
-    // // check naar likeArray uit database
-    // const likes = user.likes
+    // check naar likeArray uit database
+    const likes = user.likes
+    // Log deze array
+    console.log("Likes Array:" + " " + likes)
+    console.log(idLikedUser)
 
-    // // Log deze array
-    // // console.log("Likes" + " " + likes)
-
-    // // maak een werkbare array van de likes
+    const arrayUserLikes = arrayify(likes)
+    const arrayidLikedUser = arrayify(idLikedUser)
+    
+    const concat = arrayUserLikes.concat(arrayidLikedUser)
+    
+    console.log(concat)
+    // maak een werkbare array van de likes
     // const likeArray = arrayify(likes)
+    // log nieuwe array
+    // console.log("Arrayified:" + " " + likeArray)
 
-    // // // log nieuwe array
-    // // console.log("likeArray" + likeArray)
+    // voeg id toe aan likeLijst
+    // const concatted = likeArray.concat(idLikedUser);
+    // log concatted
+    // console.log("Combined IDs:" + " " + concatted)
 
-    // // Voeg id toe aan likeLijst
-    // const concatted = likeArray.concat(idLike);
-
-    // console.log(concatted);
+    // const concattedArray = arrayify(concatted)
+    // console.log("Concatted:" + " " + concattedArray)
 
     // // Maak een identieke lijst -> allemaal verschillende id's
     // const newSet = new Set(concatted)
@@ -37,24 +43,26 @@ const userPost = async (req, res) => {
     // const likeWork = arrayify(newSet)
     
     // Log de nieuwe set
-    // console.log("likeWork" + likeWork)
+    // console.log("Updated Like List:" + " " + likeWork)
 
     // parameters voor mongoose
-//     const change = {
-//         likes: `${likeWork}`
-//     };
-//     // Functie likes aanpassen
-//     await User.findByIdAndUpdate(idLiker, change);
+    const change = {
+        likes: concat
+    };
 
-//     // Einde functie -> redirect
-//     console.log("gefixt")
-//     res.redirect("/")
-//     // If no likes do this.
-//     } else {
-//         // Einde functie -> redirect
-//         console.log("foutje hallo")
-//         res.redirect("/")
-//     }
+    console.log("End of Syntax:" + " " + concat)
+    // // Functie likes aanpassen
+    await User.findByIdAndUpdate(idLoggedUser, change);
+
+    // Einde functie -> redirect
+    // console.log("gefixt")
+    res.redirect("/")
+    // If no likes do this.
+    } else {
+        // Einde functie -> redirect
+        // console.log("foutje hallo")
+        res.redirect("/")
+    }
 }
 
 module.exports = userPost
