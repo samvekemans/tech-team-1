@@ -1,0 +1,259 @@
+// Styling van de register pagina
+.pictureInput {
+	display: none;
+}
+
+.register{
+    main{
+        max-width: 50em;
+        margin: auto;
+        margin-top: 20px;
+
+        .selected{
+            &::after {
+                content: "";
+                top: 100%;
+                left: 0px;
+                right: 8px;
+                margin: auto;
+                height: 0px;
+                width: 0px;
+                position: absolute;
+                border-style: solid;
+                border-image: initial;
+                border-color: #519188 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+                border-width: 10px;
+            }
+        }
+
+        .buttons {
+            &:first-of-type {
+                display: flex;
+                justify-content: center;
+                gap: 1em;
+                a {
+                    position: relative;
+                    width: 12.5em;
+                    padding: 1em;
+                    border-radius: 0.5em;
+                    text-align: center;
+                    text-decoration: none;
+                    color: black;
+                    font-family: "Roboto", sans-serif;
+                    font-size: 1em;
+                    border: #519188 3px solid;
+
+                    &:hover::after {
+                        content: "";
+                        top: 100%;
+                        left: 0px;
+                        right: 8px;
+                        margin: auto;
+                        height: 0px;
+                        width: 0px;
+                        position: absolute;
+                        border-style: solid;
+                        border-image: initial;
+                        border-color: #519188 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+                        border-width: 10px;
+                    }
+                }
+            }
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 2em;
+            margin-bottom: 2em;
+            gap: 1em 0em;
+
+            button {
+                grid-column: span 5;
+                margin-left: auto;
+                padding: 1em 2em;
+                background-color: #519188;
+                border: none;
+                border-radius: 0.5em;
+                font-size: 1em;
+                cursor: pointer;
+                text-align: end;
+            
+                &:hover {
+                    box-shadow: #519188 0px 0px 5px;
+                }
+            }
+            
+            section {
+                grid-column: span 5;
+                margin: 1em 0em;
+
+                input {
+                    height: 2.5em;
+	                width: 20em;
+                }
+
+                label {
+                    font-weight: bold;
+                }
+
+                &:first-of-type {
+                    grid-column: span 4;
+	                display: flex;
+
+                    article {
+                        &:first-of-type {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5em;
+
+                            label {
+                                box-shadow: none;
+                                padding: 0em;
+                                flex-direction: row;
+                            }
+                        }
+                        &:nth-child(2) {
+                            display: flex;
+                            flex-direction: column;
+                            padding: 0.5em;
+                            margin-left: 2em;
+
+                            p {
+                                font-size: 1.3em;
+                            }
+                        }
+                    }
+                }
+                
+                article {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    gap: 1em;
+
+                    p{
+                        margin-bottom: 0em;
+                    }
+                    input {
+                        &:checked {
+                            +label {
+                                background-color: #519188;
+                                box-shadow: 0px 0px 20px #519188;
+                            }
+                        }
+                    }
+                    label {
+                        width: 8em;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        box-shadow: 0px 0px 10px #519188;
+                        padding: 1em;
+                        border-radius: 0.3em;
+                    
+                        &:hover {
+                            box-shadow: 0px 0px 20px #519188;
+                        }
+
+                        img {
+                            max-height: 6em;
+                            height: auto;
+                        }
+                    }
+                }
+
+                label {
+                    cursor: pointer;
+                }
+                p {
+                    margin-bottom: 1em;
+	                font-weight: bold;
+                }
+            }
+       
+            article {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                &:first-of-type {
+                    grid-row: span 6;
+                    margin-right: 1em;
+                    display: flex;
+                    flex-direction: row;
+
+                    label {
+                        cursor: pointer;
+                    }
+                }
+                &:nth-child(3){
+                    grid-column: span 2;
+                    margin-right: 0.5em;
+                }
+                &:nth-child(5){
+                    grid-column: span 3;
+                }
+
+                &:nth-child(6){
+                    grid-column: span 3;
+                }
+
+                &:nth-child(7){
+                    grid-column: span 3;
+                    display: flex;
+                    justify-content: end;
+                }
+
+                input {
+                    height: 2em;
+                    font-size: 1em;
+                }
+                textarea {
+                    height: 5em;
+                    font-size: 1em;
+                    padding: 0.2em;
+                    resize: none;
+                }
+                label {
+                    font-weight: bold;
+                }
+            }
+            fieldset {
+                grid-column: span 3;
+                border: none;
+                gap: 1em;
+                display: flex;
+                align-items: center;
+
+                input{
+                    cursor: pointer;
+                    height: 2em;
+                    width: 2em;
+                }
+                label {
+                    cursor: pointer;
+                    font-size: 1.5em;
+                }
+                legend {
+                    font-weight: bold;
+                    margin-bottom: 0.2em;
+                }
+            }
+        }
+    }
+}
+.pElement {
+	color: red;
+	text-align: center;
+	margin-top: 2em;
+}
+
+.adress {
+	padding: 0.2em 1em;
+	background-color: #519188;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: auto;
+}

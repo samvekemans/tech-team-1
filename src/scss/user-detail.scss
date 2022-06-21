@@ -1,0 +1,25 @@
+.user-detail {
+	max-width: 50em;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 1em;
+
+    img{
+        width: 10em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        border-radius: 5px;
+    }
+    article{
+        article{
+            display: flex;
+            gap: 2em;
+
+            img{
+                width: 4em;
+            }
+        }
+    }
+}

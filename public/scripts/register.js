@@ -30,17 +30,6 @@ const pictureInput = document.querySelector('.pictureInput');
 const latInput = document.querySelector('#lat');
 const lngInput = document.querySelector('#lng');
 
-const checkboxesSearch = document.querySelectorAll(
-  '.search input[type=checkbox]:checked'
-);
-const checkboxes1 = document.querySelectorAll(
-  '.checkbox1 input[type=checkbox]:checked'
-);
-
-const checkboxes2 = document.querySelectorAll(
-  '.checkbox2 input[type=checkbox]:checked'
-);
-
 formElement.addEventListener('submit', (event) => {
   event.preventDefault();
   if (!regex.test(zipCode.value)) {
@@ -52,16 +41,7 @@ formElement.addEventListener('submit', (event) => {
   if (!pictureInput.value) {
     errorMessage.textContent = 'Vul een foto in';
   }
-  if (checkboxesSearch.length === 0) {
-    errorMessage.textContent = 'Geef aan waar u naar zoekt';
-  }
-  if (checkboxes1.length === 0) {
-    errorMessage.textContent = 'Vul de eigenschappen in';
-  }
-  if (checkboxes2.length === 0) {
-    errorMessage.textContent = 'Vul de eigenschappen in';
-  }
-  if (regex.test(zipCode.value) && cityInput.value) {
+  if (cityInput.value && pictureInput.value) {
     formElement.submit();
   }
 });
