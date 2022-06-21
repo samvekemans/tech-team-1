@@ -51,8 +51,8 @@ app.use(flash());
 app.use(
   session({
     secret: 'secret',
+    saveUninitialized: false,
     resave: false,
-    saveUnitialized: false,
   })
 );
 
