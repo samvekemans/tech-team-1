@@ -24,16 +24,13 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.17.3",
     "method-override": "^3.0.0",
-    "mongodb": "^4.6.0",
     "mongoose": "^6.3.8",
-    "mongosh": "^1.4.2",
     "multer": "^1.4.4",
     "nodemailer": "^6.7.5",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "save-dev": "^0.0.1-security",
-    "slug": "^5.3.0",
-    "vows": "^0.8.3"
+    "slug": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
