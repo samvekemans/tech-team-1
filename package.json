@@ -21,6 +21,7 @@
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "browser-sync": "^2.27.10",
+    "compression": "^1.7.4",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",

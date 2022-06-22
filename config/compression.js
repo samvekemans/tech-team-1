@@ -1,3 +1,5 @@
+const express = require("express")
+const app = express()
 // Require compression
 const compression = require('compression');
 

@@ -32,6 +32,11 @@ const connectDB = require('./config/dbConnect');
 
 connectDB();
 
+// compress runnen
+const { startCompress } = require('./config/compression');
+
+startCompress();
+
 /** *****************************************************
  * Middleware
  ******************************************************* */
