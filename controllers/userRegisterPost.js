@@ -1,9 +1,31 @@
 const User = require('../models/user');
 const createUser = require('../config/createUser');
 
+const {
+  src,
+  dest,
+} = require("gulp");
+const webp = require("gulp-webp");
+const paths = {
+  uploads: {
+    src: "./public/uploads/*",
+    dest: "./public/dist/uploads",
+    webp: "./public/dist/uploads/webp",
+  },
+};
+
 const register_post = async (req, res) => {
   // Constante uit de req.body
-  const { email } = req.body;
+  function gulped() {
+    return src(paths.uploads.src)
+      .pipe(webp())
+      .pipe(dest(paths.uploads.webp));
+  }
+  gulped()
+
+  const {
+    email
+  } = req.body;
   const addUser = req.body;
   const pictureUser = req.file ? `uploads/${req.file.filename}` : null;
 

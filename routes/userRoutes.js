@@ -11,7 +11,9 @@ const passportConfig = require('../config/passport-config');
 
 const User = require('../models/user');
 
-const upload = require('../config/multer');
+const {
+  upload
+} = require('../config/multer');
 
 // // Link naar Multer config.
 // const {
@@ -27,7 +29,7 @@ passportConfig.initialize2(
     await User.findOne({
       email,
     }),
-  (id) => id
+    (id) => id
 );
 
 // Routes
