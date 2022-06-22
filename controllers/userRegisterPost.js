@@ -28,14 +28,9 @@ const register_post = async (req, res) => {
     email
   } = req.body;
   const addUser = req.body;
-  //  : null;
-  console.log(req.file)
-  console.log(path.extname(req.file.filename))
-
-  // const url = req.file.filename - path.extname(req.file.filename)
 
   const source = req.file.filename //.jpg .jpeg .png 
-  // let str = "pictureUser1655920835031.jpeg";
+
   if (source.substr(-3) == "jpg") {
     let result = source.replace(/jpg/gi, "webp");
     const fileName = `dist/uploads/webp/${result}`
