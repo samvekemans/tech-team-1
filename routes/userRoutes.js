@@ -11,7 +11,9 @@ const passportConfig = require('../config/passport-config');
 
 const User = require('../models/user');
 
-const upload = require('../config/multer');
+const {
+  upload
+} = require('../config/multer');
 
 // // Link naar Multer config.
 // const {
@@ -27,7 +29,7 @@ passportConfig.initialize2(
     await User.findOne({
       email,
     }),
-  (id) => id
+    (id) => id
 );
 
 // Routes
@@ -41,6 +43,7 @@ router.get('/users/:userId', checkLogged, useController.user_detail);
 router.get('/account/verify/:token', useController.user_activate);
 
 router.get('/users', checkLogged, useController.user_users);
+router.post('/users', checkLogged, useController.user_post);
 
 router.get('/register', checkNotLogged, useController.user_register);
 router.get('/register-zorg', checkNotLogged, useController.user_register_zorg);
@@ -50,6 +53,9 @@ router.post(
   upload.single('pictureUser'),
   useController.user_register_post
 );
+
+router.get('/likes', checkLogged, useController.user_likes);
+router.post('/likes', checkLogged, useController.user_postdel);
 
 router.get('/login', checkNotLogged, useController.user_login);
 router.post('/login', checkNotLogged, passportConfig.login);

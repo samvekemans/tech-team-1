@@ -1,51 +1,169 @@
-const { src, series, dest, watch, parallel } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const prefix = require('gulp-autoprefixer');
-const minify = require('gulp-clean-css');
+const {
+	src,
+	series,
+	dest,
+	watch,
+	parallel
+} = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const prefix = require("gulp-autoprefixer");
+const minify = require("gulp-clean-css");
+const leec = require("gulp-line-ending-corrector");
 
-const eslint = require('eslint');
-const concat = require('gulp-concat');
-const sourceMaps = require('gulp-sourcemaps');
+const concat = require("gulp-concat");
+const sourceMaps = require("gulp-sourcemaps");
 
-const uglify = require('gulp-uglify');
+const uglify = require("gulp-uglify");
+
+// Gulp image-min
+const imagemin = async () => {
+	return await import("gulp-imagemin");
+};
+
+// const { gifsicle, mozjpeg, optipng, svgo } = import("gulp-imagemin");
+const webp = require("gulp-webp");
 
 const paths = {
-  styles: {
-    src: './src/scss/*.scss',
-    dest: './public/dist/css',
-  },
-  scripts: {
-    src: './public/scripts/*.js',
-    dest: './public/dist/scripts',
-  },
+	styles: {
+		src: "./src/scss/*.scss",
+		css: "./src/css",
+		file: "./src/css/*",
+		dest: "./public/dist/css",
+	},
+	scripts: {
+		src: "./public/scripts/*.js",
+		dest: "./public/dist/scripts",
+	},
+	images: {
+		src: "./public/images/*",
+		dest: "./public/dist/images",
+		webp: "./public/dist/images/webp",
+	},
+	uploads: {
+		src: "./public/uploads/*",
+		dest: "./public/dist/uploads",
+		webp: "./public/dist/uploads/webp",
+	},
 };
 
 // source map // compress
 function style() {
-  return src(paths.styles.src)
-    .pipe(sourceMaps.init())
-    .pipe(sass())
-    .pipe(prefix('last 2 versions'))
-    .pipe(minify())
-    .pipe(sourceMaps.write())
-    .pipe(concat('test.css'))
-    .pipe(dest(paths.styles.dest));
+	return src(paths.styles.src)
+		.pipe(sourceMaps.init({
+			loadMaps: true
+		}))
+		.pipe(sass())
+		.pipe(prefix("last 2 versions"))
+		.pipe(sourceMaps.write())
+		.pipe(leec())
+		.pipe(dest(paths.styles.css));
+}
+
+function concatCss() {
+	return src(paths.styles.file)
+		.pipe(sourceMaps.init({
+			loadMaps: true,
+			largeFile: true
+		}))
+		.pipe(concat("all.css"))
+		.pipe(minify())
+		.pipe(sourceMaps.write("./maps/"))
+		.pipe(leec())
+		.pipe(dest(paths.styles.dest))
 }
 
 function script() {
-  return src(paths.scripts.src, {
-    sourcemaps: true,
-  })
-    .pipe(uglify())
-    .pipe(concat('main.min.js'))
-    .pipe(dest(paths.scripts.dest));
+	return src(paths.scripts.src)
+		.pipe(sourceMaps.init())
+		.pipe(uglify())
+		.pipe(sourceMaps.write())
+		.pipe(concat("all.js"))
+		.pipe(dest(paths.scripts.dest));
+}
+
+// Images
+async function imageMin() {
+	return src(paths.images.src)
+		.pipe(
+			imagemin([
+				imagemin.gifsicle({
+					interlaced: true,
+				}),
+				imagemin.mozjpeg({
+					quality: 75,
+					progressive: true,
+				}),
+				imagemin.optipng({
+					optimizationLevel: 5,
+				}),
+				imagemin.imageminWebp({
+					quality: 75,
+					method: 3,
+				}),
+				imagemin.svgo({
+					plugins: [{
+							name: "removeViewbox",
+							active: true,
+						},
+						{
+							name: "cleanupIDs",
+							active: false,
+						},
+					],
+				}),
+			])
+		)
+		.pipe(dest(paths.images.dest));
+}
+
+function makeWebp() {
+	return src(paths.images.src).pipe(webp()).pipe(dest(paths.images.webp));
+}
+
+// Uploads
+function uploadMin() {
+	return src(paths.uploads.src)
+		.pipe(
+			imagemin([
+				imagemin.mozjpeg({
+					quality: 75,
+					progressive: true,
+				}),
+				imagemin.optipng({
+					optimizationLevel: 5,
+				}),
+				imagemin.imageminWebp({
+					quality: 75,
+					method: 3,
+				}),
+				imagemin.svgo({
+					plugins: [{
+							name: "removeViewbox",
+							active: true,
+						},
+						{
+							name: "cleanupIDs",
+							active: false,
+						},
+					],
+				}),
+			])
+		)
+		.pipe(dest(paths.uploads.dest));
+}
+
+function uploadWebp() {
+	return src(paths.uploads.src).pipe(webp()).pipe(dest(paths.uploads.webp));
 }
 
 async function watchTask() {
-  watch(['src/scss/*.scss'], style);
-  watch(['public/scripts/*.js'], script);
+	watch(["public/images/*"], makeWebp);
+	watch(["public/uploads/*"], uploadWebp);
+	watch(["src/scss/*.scss"], series(style, concatCss));
+	watch(["public/scripts/*.js"], script);
 }
 
 exports.watch = watchTask;
+// exports.imagemin = imageMin;
 
-exports.default = parallel(style, script, watchTask);
+exports.default = parallel(series(style, concatCss), script, makeWebp, uploadWebp, watchTask);
