@@ -12,6 +12,7 @@ const users = async (req, res) => {
         res.render("pages/users", {
             users,
             oldTradesTitle,
+            activeAcc,
         });
     } else {
         const query = {
@@ -21,6 +22,7 @@ const users = async (req, res) => {
         res.render("pages/users", {
             users,
             oldTradesTitle,
+            activeAcc,
         });
     }
 };
