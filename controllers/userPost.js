@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const arrayify = require('array-back')
+const arrayify = require('array-back');
 
 const userPost = async (req, res) => {
     // Constante van gebruiker en likes
@@ -14,9 +14,9 @@ const userPost = async (req, res) => {
 
     const arrayUserLikes = arrayify(likes)
     const arrayidLikedUser = arrayify(idLikedUser)
-    
+
     const concat = arrayUserLikes.concat(arrayidLikedUser)
-    
+
     console.log(concat)
 
     // // Maak een identieke lijst -> allemaal verschillende id's
@@ -30,9 +30,9 @@ const userPost = async (req, res) => {
     };
 
     console.log(likeWork)
-    
+
     // // Functie likes aanpassen
-    await User.findByIdAndUpdate(req.user, change).exec(function(){
+    await User.findByIdAndUpdate(req.user, change).exec(function () {
         console.log("gelukt")
     });
 
@@ -44,54 +44,53 @@ module.exports = userPost
 
 
 
-   
 
-    // const check = likeArray.includes(idLike);
-    // if(check == true){
-    //     // niet toevoegen, zit er al in.
-    // }
 
-    
-    
-    // voeg id toe aan likeArray
-
-    // update likeArray
-
-    // redirect users, zonder gelikede users.
+// const check = likeArray.includes(idLike);
+// if(check == true){
+//     // niet toevoegen, zit er al in.
+// }
 
 
 
+// voeg id toe aan likeArray
 
-    // idLike toevoegen aan array
-    // const change = {
-    //     likes: "test" // array ,
-    // };
-    // const newUser = await User.findByIdAndUpdate(id, change);
+// update likeArray
 
-    
-    // }  else if (!user.likes) {
-    // // idLike toevoegen aan nieuwe array
-    // const change = {
-    //     likes: `${idLike}` // array ,
-    // };
-    // const newUser = await User.findByIdAndUpdate(id, change);
-    // }
-
-    // user.likes // id 
-
-    // haal de likes op 
-
-    // voeg de like aan de array toe
-
-    // update gebruiker likes -> array
-
-    
+// redirect users, zonder gelikede users.
 
 
 
-    // User die de post liked -> req.user >> query
-    // User die is geliked -> req.body
-    // Id van liked
-    // 
-    // 
-    
+
+// idLike toevoegen aan array
+// const change = {
+//     likes: "test" // array ,
+// };
+// const newUser = await User.findByIdAndUpdate(id, change);
+
+
+// }  else if (!user.likes) {
+// // idLike toevoegen aan nieuwe array
+// const change = {
+//     likes: `${idLike}` // array ,
+// };
+// const newUser = await User.findByIdAndUpdate(id, change);
+// }
+
+// user.likes // id 
+
+// haal de likes op 
+
+// voeg de like aan de array toe
+
+// update gebruiker likes -> array
+
+
+
+
+
+// User die de post liked -> req.user >> query
+// User die is geliked -> req.body
+// Id van liked
+// 
+// 

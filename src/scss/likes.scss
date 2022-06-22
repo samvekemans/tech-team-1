@@ -1,0 +1,35 @@
+body {
+    &.likes {
+        article {
+            &.noLikes {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 7.5em;
+                margin-top: 7.5em;
+
+                h2 {
+                    font-size: 2em;
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: 1em;
+                    border: 2px solid #519188;
+                    background-color: #519188;
+                    padding: .7em;
+                    color: white;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 700;
+                    cursor: pointer;
+                    transition: all 200ms;
+
+                    &:hover {
+                        text-decoration: underline;
+                        box-shadow: 2px 2px 10px rgba($color: #519188, $alpha: 0.75);
+                    }
+                }
+            }
+        }
+    }
+}
