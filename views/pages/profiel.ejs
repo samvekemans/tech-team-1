@@ -30,26 +30,36 @@
                 </section>
             </section>
             <form action="/logout?_method=DELETE" method="POST">
-                <button type="submit">Log out</button>
+                <button type="submit">Log out →</button>
             </form>
         </section>
         <section class="content">
             <article>
-                <h2><%= careTradesTitle %></h2>
-                <article>
-                    <% user.careGiverTrades.forEach((careTrade)=> { %>
-                    <img src="/images/<%= careTrade %>.png" alt="icon">
-                    <% }); %>
-                </article>
+                <section>
+                    <h3><%= careTradesTitle %></h3>
+                    <article>
+                        <% user.oldPersonTrades.forEach((oldTrade)=> { %>
+                        <img src="/images/<%= oldTrade %>.png" alt="icon">
+                        <% }); %>
+                    </article>
+                </section>
+                <section>
+                    <h3>Wat is verwacht:</h3>
+                    <article>
+                        <% user.careGiverTrades.forEach((careTrade)=> { %>
+                        <img src="/images/<%= careTrade %>.png" alt="icon">
+                        <% }); %>
+                    </article>
+                </section>
             </article>
             <section class="map">
                 <section>
-                    <h2>Mijn Adres:</h2>
+                    <h3>Mijn Adres:</h3>
                     <p><strong>Stad:</strong> <%= user.city %></p>
                     <p><strong>Straat:</strong> <%= user.street %></p>
                     <p><strong>Huisnummer:</strong> <%= user.houseNumber %> </p>
                 </section>
-                <div id="map" style="height: 100%; width: 50%;"></div>
+                <div id="map" style="height: 100%; width: 75%;"></div>
             </section>
         </section>
 

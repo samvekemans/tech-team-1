@@ -157,9 +157,9 @@ function uploadWebp() {
 }
 
 async function watchTask() {
-	watch(["public/images/*"], series(imageMin, makeWebp));
-	watch(["public/uploads/*"], series(uploadMin, uploadWebp));
-	watch(["src/scss/*.scss"], style);
+	watch(["public/images/*"], makeWebp);
+	watch(["public/uploads/*"], uploadWebp);
+	watch(["src/scss/*.scss"], series(style, concatCss));
 	watch(["public/scripts/*.js"], script);
 }
 
