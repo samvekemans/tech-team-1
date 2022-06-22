@@ -1,9 +1,11 @@
+// variabelen voor aanroepen gebruikte packages
 const gulp = import('gulp');
 const imagemin = import('gulp-imagemin');
 const { src, dest } = require('gulp');
 const {gifsicle, mozjpeg, optipng, svgo} = import('gulp-imagemin');
 const webp = require('gulp-webp');
 
+// variabele voor de paden
 const paths = {
     images: {
         src: './public/images/*',
@@ -12,6 +14,7 @@ const paths = {
     }
 }
 
+// imagemin gebruiken op de images in de folder te minifyen en te sturen naar een nieuwe map
 exports.default = () => {
     return src(paths.images.src)
     .pipe(imagemin([
@@ -35,6 +38,7 @@ exports.default = () => {
     .pipe(dest(paths.images.dest))
 };
 
+// webp gebruiken om de images om te zetten naar webp die in een nieuwe map worden gezet
 exports.default = () => {
     return src(paths.images.src)
         .pipe(webp())
