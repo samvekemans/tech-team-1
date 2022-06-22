@@ -66,6 +66,13 @@
       </button>
     </article>
     <%}%>
+    <%if(activeAcc.likes){%>
+    <section class="likes">
+      <% activeAcc.likes.forEach((like) => {%>
+      <li><%= like %></li>
+      <%})%>
+    </section>
+    <%}%>
   </main>
 
   <footer>
