@@ -1,27 +1,65 @@
 const User = require("../models/user");
 
 const userLikes = async (req, res) => {
+    const activeUser = await User.findById(req.user)
+    const likes = activeUser.likes
+    const gebruikers = []
+    let oldTradesTitle = "Mijn eigeschappen:";
+    console.log(likes)
 
-    const activeAcc = await User.findById(req.user)
-    console.log(activeAcc)
+    if (likes == "undefined"){
+        res.send("geen likes beschikbaar")
+        // Callback functie
+        // Render "je hebt nog geen likes" op de pagina
+    } else {
+        // Mensen ophalen uit likes
+        likes.forEach(like => {
+            gebruikers.push(likedUsers(like))
+            // console.log(gebruikers)
+        })
 
-    const activeAccLikes = activeAcc.likes
-    console.log(activeAccLikes)
+        async function likedUsers(id){
+            const likedUser = await User.findById(id)
+            return likedUser
+        }
 
-    const filterFav = await User.find(req._id)
-    console.log(filterFav)
+        Promise.all(gebruikers).then((data)=>{
+            const users = data;
+            res.render("pages/userstest", {
+                users,
+                oldTradesTitle,
+            });
+        })      
+        // Render mensen
+    }
+
+
     
-    let favTitle = "Mijn favoriete"
+    // console.log(activeAcc)
 
-    res.render("pages/likes", {
-        activeAccLikes,
-        favTitle,
-    })
+    // const activeAccLikes = activeAcc.likes
+    // // console.log(activeAccLikes)
+
+    // // const filterFav = await User.find()
+    // // console.log(filterFav)
+
+    // // if (activeAcc.likes == filterFav) {
+    // //     console.log("User al toegevoegd")
+    // // } else {
+    // //     console.log("User toegevoegd")
+    // // }
+    
+    // let favTitle = "Mijn favoriete"
+
+    // res.render("pages/likes", {
+    //     activeAccLikes,
+    //     favTitle,
+    // })
 }
 
 
 // const userLikes = async (req, res) => {
-//     const activeAcc = await User.findById(req.user)
+//     
 //     const activeAccLikes = activeAcc.likes
 
 //     if (activeAccLikes != "undefined") {

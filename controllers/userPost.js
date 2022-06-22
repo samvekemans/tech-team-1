@@ -9,10 +9,6 @@ const userPost = async (req, res) => {
     // ingelogde gebruiker ophalen met findById
     const user = await User.findById(idLoggedUser);
 
-    console.log(user)
-    // // Als de gebruiker likes heeft if uitvoeren
-    
-
     // check naar likeArray uit database
     const likes = user.likes
 
@@ -22,38 +18,21 @@ const userPost = async (req, res) => {
     const concat = arrayUserLikes.concat(arrayidLikedUser)
     
     console.log(concat)
-    // maak een werkbare array van de likes
-    // const likeArray = arrayify(likes)
-    // log nieuwe array
-    // console.log("Arrayified:" + " " + likeArray)
-
-    // voeg id toe aan likeLijst
-    // const concatted = likeArray.concat(idLikedUser);
-    // log concatted
-    // console.log("Combined IDs:" + " " + concatted)
-
-    // const concattedArray = arrayify(concatted)
-    // console.log("Concatted:" + " " + concattedArray)
 
     // // Maak een identieke lijst -> allemaal verschillende id's
     const newSet = new Set(concat)
     // // Maak een array van de set.
     const likeWork = arrayify(newSet)
-    
-    // Log de nieuwe set
-    // console.log("Updated Like List:" + " " + likeWork)
 
     // parameters voor mongoose
     const change = {
         likes: likeWork
     };
+    
     // // Functie likes aanpassen
     await User.findByIdAndUpdate(idLoggedUser, change);
 
-    // Einde functie -> redirect
-    // console.log("gefixt")
     res.redirect("/")
-    // If no likes do this.
 }
 
 module.exports = userPost
