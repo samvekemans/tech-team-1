@@ -5,12 +5,30 @@ const userLikes = async (req, res) => {
     const likes = loggedUser.likes;
     const gebruikers = []
     let oldTradesTitle = "Mijn eigeschappen:";
+    const noUsers = "Er zijn geen gebruikers geliked."
     // console.log(likes)
     // console.log(loggedUser)
     // console.log(loggedUser.likes)
 
     if (likes.length == 0){
-        res.send("geen likes beschikbaar")
+
+        likes.forEach(like => {
+            gebruikers.push(likedUsers(like))
+            // console.log(gebruikers)
+        })
+
+        async function likedUsers(id){
+            const likedUser = await User.findById(id)
+            return likedUser
+        }
+
+        Promise.all(gebruikers).then((data)=>{
+            const users = data;
+            res.render("pages/likes", {
+                users,
+                noUsers,
+            });
+        }) 
         // Callback functie
         // Render "je hebt nog geen likes" op de pagina
     } else {
@@ -26,10 +44,12 @@ const userLikes = async (req, res) => {
         }
 
         Promise.all(gebruikers).then((data)=>{
+            const noUsers = ""
             const users = data;
             res.render("pages/likes", {
                 users,
                 oldTradesTitle,
+                noUsers,
             });
         })      
         // Render mensen

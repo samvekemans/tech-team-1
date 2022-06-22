@@ -12,6 +12,7 @@
 
   <main>
     <section class="x-overflow">
+      <h2><%= noUsers %></h2>
       <% users.forEach((user) =>{ %>
       <section class="section">
         <a href="users/<%= user._id %> ">
@@ -46,7 +47,7 @@
 
         <section>
             <form action="/likes" method="post">
-              <button name="remove" type="submit" value="<%= user._id %>" class="btnHeart">Remove</button> 
+              <button name="remove" type="submit" value="<%= user._id %>" class="btnHeart">Unlike</button> 
             </form>
         </section>
         
