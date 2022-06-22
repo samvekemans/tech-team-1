@@ -82,76 +82,11 @@ function script() {
 }
 
 // Images
-async function imageMin() {
-	return src(paths.images.src)
-		.pipe(
-			imagemin([
-				imagemin.gifsicle({
-					interlaced: true,
-				}),
-				imagemin.mozjpeg({
-					quality: 75,
-					progressive: true,
-				}),
-				imagemin.optipng({
-					optimizationLevel: 5,
-				}),
-				imagemin.imageminWebp({
-					quality: 75,
-					method: 3,
-				}),
-				imagemin.svgo({
-					plugins: [{
-							name: "removeViewbox",
-							active: true,
-						},
-						{
-							name: "cleanupIDs",
-							active: false,
-						},
-					],
-				}),
-			])
-		)
-		.pipe(dest(paths.images.dest));
-}
-
 function makeWebp() {
 	return src(paths.images.src).pipe(webp()).pipe(dest(paths.images.webp));
 }
 
 // Uploads
-function uploadMin() {
-	return src(paths.uploads.src)
-		.pipe(
-			imagemin([
-				imagemin.mozjpeg({
-					quality: 75,
-					progressive: true,
-				}),
-				imagemin.optipng({
-					optimizationLevel: 5,
-				}),
-				imagemin.imageminWebp({
-					quality: 75,
-					method: 3,
-				}),
-				imagemin.svgo({
-					plugins: [{
-							name: "removeViewbox",
-							active: true,
-						},
-						{
-							name: "cleanupIDs",
-							active: false,
-						},
-					],
-				}),
-			])
-		)
-		.pipe(dest(paths.uploads.dest));
-}
-
 function uploadWebp() {
 	return src(paths.uploads.src).pipe(webp()).pipe(dest(paths.uploads.webp));
 }
