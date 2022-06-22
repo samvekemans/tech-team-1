@@ -3,14 +3,21 @@ const oldButton = document.querySelector('#old-person');
 const careButton = document.querySelector('#caregiver');
 const API_KEY =
   'YWQxZDMwMmFlZTYwNGQwOWJjZWUxYTUwOTg2Mjg3ZmQ6MDI4NTVlNjItZTE4NC00YTNmLThjMDktOTBlZTY4MTg1NTY2';
+const picture = document.getElementById('pictureUser');
 
-document.getElementById('pictureUser').addEventListener('change', (event) => {
-  if (event.target.files.length !== 0) {
-    const imgFile = event.target.files[0];
-    const imgSrc = URL.createObjectURL(imgFile);
-    img.src = imgSrc;
+function selectPicture() {
+  if (picture) {
+    picture.addEventListener('change', (event) => {
+      if (event.target.files.length !== 0) {
+        const imgFile = event.target.files[0];
+        const imgSrc = URL.createObjectURL(imgFile);
+        img.src = imgSrc;
+      }
+    });
   }
-});
+}
+
+selectPicture();
 
 const regex = /^(?:NL-)?(\d{4})\s*([A-Z]{2})$/i;
 const formElement = document.querySelector('.form');
