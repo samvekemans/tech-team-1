@@ -1,6 +1,8 @@
 const img = document.querySelector('.img');
 const oldButton = document.querySelector('#old-person');
 const careButton = document.querySelector('#caregiver');
+const API_KEY =
+  'YWQxZDMwMmFlZTYwNGQwOWJjZWUxYTUwOTg2Mjg3ZmQ6MDI4NTVlNjItZTE4NC00YTNmLThjMDktOTBlZTY4MTg1NTY2';
 
 document.getElementById('pictureUser').addEventListener('change', (event) => {
   if (event.target.files.length !== 0) {
@@ -50,26 +52,30 @@ adressButton.addEventListener('click', async () => {
   if (zipCode.value && houseNumber.value) {
     zipCode.value.toUpperCase();
     fetch(
-      `http://api.postcodedata.nl/v1/postcode/?postcode=${zipCode.value}&streetnumber=${houseNumber.value}&ref=domeinnaam.nl&type=json`
+      `https://api.myptv.com/geocoding/v1/locations/by-text?searchText=${zipCode.value}%20${houseNumber.value}&countryFilter=NL`,
+      {
+        method: 'GET',
+        headers: { apiKey: API_KEY },
+      }
     )
       .then((response) => response.json())
       .then((apiData) => {
-        const data = apiData;
-        if (data.status === 'error') {
+        const data = apiData.locations;
+        if (data[0].locationType === 'POSTAL_CODE') {
           errorMessage.textContent = 'Adress is onjuist';
         }
-        if (data.status === 'ok') {
-          city.textContent = data.details[0].city;
-          street.textContent = data.details[0].street;
-          zipCodeText.textContent = data.details[0].postcode;
-          province.textContent = data.details[0].province;
+        if (data[0].locationType === 'EXACT_ADDRESS') {
+          city.textContent = data[0].address.city;
+          street.textContent = data[0].address.street;
+          zipCodeText.textContent = data[0].address.postalCode;
+          province.textContent = data[0].address.state;
 
-          cityInput.value = data.details[0].city;
-          streetInput.value = data.details[0].street;
-          zipCodeTextInput.value = data.details[0].postcode;
-          provinceInput.value = data.details[0].province;
-          latInput.value = data.details[0].lat;
-          lngInput.value = data.details[0].lon;
+          cityInput.value = data[0].address.city;
+          streetInput.value = data[0].address.street;
+          zipCodeTextInput.value = data[0].address.postalCode;
+          provinceInput.value = data[0].address.state;
+          latInput.value = data[0].referencePosition.latitude;
+          lngInput.value = data[0].referencePosition.longitude;
         }
       })
       .catch((error) => {
