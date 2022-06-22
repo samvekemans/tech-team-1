@@ -1,3 +1,10 @@
+const API_KEY = `AIzaSyBG0TS1HiOvZFbjpnuuzypOqfPRQedy5OQ`;
+const script = document.createElement('script');
+script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
+script.async = true;
+
+document.head.appendChild(script);
+
 const latData = document.querySelector('#lat').value;
 const latNumber = parseFloat(latData);
 const lngData = document.querySelector('#lng').value;
