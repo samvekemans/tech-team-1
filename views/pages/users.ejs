@@ -15,12 +15,12 @@
       <% users.forEach((user) =>{ %>
       <section class="section">
         <a href="users/<%= user._id %> ">
-
+          
           <article>
             <h1><%= user.name %> </h1>
             <div style="background-image: url('<%= user.pictureUser %>');">
             </div>
-            <img src="<%= user.pictureUser %> " alt="">
+            <img src="<%= user.pictureUser %> " alt="user picture">
           </article>
 
           <article>
