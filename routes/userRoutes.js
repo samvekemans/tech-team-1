@@ -55,6 +55,7 @@ router.post(
 );
 
 router.get('/likes', checkLogged, useController.user_likes);
+router.post('/likes', checkLogged, useController.user_postdel);
 
 router.get('/login', checkNotLogged, useController.user_login);
 router.post('/login', checkNotLogged, passportConfig.login);

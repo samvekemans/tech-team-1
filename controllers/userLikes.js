@@ -9,7 +9,7 @@ const userLikes = async (req, res) => {
     // console.log(loggedUser)
     // console.log(loggedUser.likes)
 
-    if (likes == undefined){
+    if (likes.length == 0){
         res.send("geen likes beschikbaar")
         // Callback functie
         // Render "je hebt nog geen likes" op de pagina

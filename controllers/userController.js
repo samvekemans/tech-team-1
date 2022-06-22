@@ -15,6 +15,7 @@ const user_register_zorg = require('./userRegisterZorg');
 
 const user_likes = require('./userLikes');
 const user_post = require('./userPost');
+const user_postdel = require('./userPostDel');
 
 const user_activate = require('./activateAccount');
 const user_profiel = require('./userProfiel');
@@ -45,4 +46,5 @@ module.exports = {
   user_profiel,
   user_likes,
   user_post,
+  user_postdel,
 };
