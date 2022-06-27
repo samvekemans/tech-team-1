@@ -3,14 +3,11 @@
 	display: none;
 }
 
-// .label{
-//     position: relative;
-//     max-width: 15em;
-//     max-height: 12em;
-// }
-
 .imgWrapper{
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover{
         opacity: 0.8;
         &::after{
@@ -19,17 +16,12 @@
             background-position: center;
             background-size: contain;
             display: inline-block;
-            width: 15em; 
-            height: 12em;
             content:"";
             position: absolute;
             top: 0px;
             right: 0px;
-            left: -24px;
+            left: 0px;
             bottom: 0px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
     }
     
@@ -38,6 +30,7 @@
 .img {
     max-width: 15em;
     max-height: 12em;
+    border-radius: 100%;
 }
 
 .register{
