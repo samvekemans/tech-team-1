@@ -18,20 +18,23 @@
 				font-family: 'Fascinate', cursive;
 				font-size: 3.75em;
 			}
+
 			p {
 				font-family: "Roboto", sans-serif;
 				font-size: 1.3em;
 				margin-bottom: 1.9em;
+
 				&:first-of-type {
 					margin: 0.7em 0em;
 				}
 			}
+
 			a {
 				padding: 0.7em;
 				font-family: "Roboto", sans-serif;
 				font-weight: bold;
 				text-decoration: none;
-				color: white;
+				color: #ffffff;
 				background-color: #519188;
 			}
 		}
