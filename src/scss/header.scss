@@ -10,5 +10,31 @@ header {
         img{
             max-height: 5em;
         }
+
+    ul {
+        display: flex;
+		justify-content: space-evenly;
+        width: 100%;
+
+        li {
+            list-style: none;
+            
+            a {
+                text-align: center;
+                color: #519188;
+				font-size: 20px;
+				font-weight: bold;
+				text-decoration: none;
+                padding: 1em 2em;
+                border-radius: 5px;
+
+                &:hover {
+					background-color: #d5b9b1;
+                    text-decoration: underline;
+				}
+
+            }
+        }
+    }
     }
 }
