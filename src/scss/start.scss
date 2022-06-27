@@ -11,8 +11,10 @@
 		position: relative;
 
 		section {
-			background-color: #f2d6ca48;
+			background-color: #f9f5ea;
 			padding: 10%;
+			border-radius: 15px;
+			box-shadow: 1px 1px 35px 10px rgba(0, 0, 0, 0.1);
 
 			h1 {
 				font-family: 'Fascinate', cursive;
@@ -33,6 +35,13 @@
 				text-decoration: none;
 				color: white;
 				background-color: #519188;
+				transition: all 100ms;
+				&:hover {
+					background-color: #1b3e3a;
+				}
+				&:first-of-type {
+					margin-right: 10px;
+				}
 			}
 		}
 	}
