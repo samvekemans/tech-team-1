@@ -15,9 +15,14 @@ header {
         display: flex;
 		justify-content: space-evenly;
         width: 100%;
+        
 
         li {
             list-style: none;
+            border-left: 2px solid #519188;
+            border-right: 2px solid #519188;
+            height: 100%;
+            padding: 1.5em;
             
             a {
                 text-align: center;
@@ -27,11 +32,17 @@ header {
 				text-decoration: none;
                 padding: 1em 2em;
                 border-radius: 5px;
+                transition: ease-in-out;
+                transition-duration: 300ms;
 
                 &:hover {
 					background-color: #d5b9b1;
                     text-decoration: underline;
 				}
+
+                &:active {
+                    border: 2px solid #519188;
+                }
 
             }
         }
