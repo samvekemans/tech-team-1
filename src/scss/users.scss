@@ -22,11 +22,11 @@
         >section {
             max-width: 60em;
             margin: auto;
-            margin-top: 20px;
             display: flex;
             overflow-x: auto;
             overflow-y: hidden;
             padding: 2em 0.2em;
+            padding-top: 0em;
             position: relative;
             align-items: center;
             scroll-behavior: smooth;
