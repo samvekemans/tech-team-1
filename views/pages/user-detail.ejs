@@ -5,38 +5,109 @@
   <%- include('../partials/head'); %>
 </head>
 
-<body>
+<body class="profiel">
   <header>
     <%- include('../partials/header'); %>
   </header>
 
-  <main class="user-detail">
-    <img src="<%= user.pictureUser %> " alt="">
-    <h1><%= user.name %></h1>
-    <p><strong>Over <%= user.name %>:</strong> <%= user.description %> </p>
-    <p><strong>adres:</strong></p>
-    <p><strong>Stad:</strong> <%= user.city %></p>
-    <p><strong>Straat:</strong> <%= user.street %></p>
-    <p><strong>Huisnummer:</strong> <%= user.houseNumber %> </p>
-    <article>
-      <p><strong><%= careTradesTitle %></strong></p>
-      <article>
-        <% user.careGiverTrades.forEach((careTrade)=> { %>
-        <img src="/images/<%= careTrade %>.png" alt="icon">
-        <% }); %>
-      </article>
-    </article>
-    <div id="map" style="height: 400px; width: 100%;"></div>
+  <main>
+    <section class="banner">
+      <h1>Gebruiker</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1366 163.68">
+        <path class="cls-1"
+          d="M0,163.68C215.94,64.47,388.41,49.89,504.63,54.33c157.74,6.01,227.33,47.62,384.8,52.22,204.29,5.97,370.77-55.77,476.57-106.55V163.68H0Z" />
+      </svg>
+    </section>
+    <section>
+      <section class="content">
+        <section class="pictureName">
+          <img src="<%= user.pictureUser %>" alt="Foto van de gebruiker">
+          <h2><%= user.name %> <span><%= user.age %></span></h2>
+          <section class="like">
+            <form class="heart" action="/users" method="post">
+              <button name="favorite" type="submit" value="<%= user._id %>" class="btnHeart">
+                <svg class="heart" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                  <path
+                    d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z" />
+                </svg>
+              </button>
+            </form>
+          </section>
+        </section>
+        <section class="line">
+          <div class="line"></div>
+        </section>
+        <section class="info">
+          <section>
+            <h3>Persoonlijke gegevens</h3>
+            <section>
+              <h4>Over mij:</h4>
+              <p><%= user.description %></p>
+            </section>
+            <section>
+              <h4>Ik ben op zoek naar:</h4>
+              <ul>
+                <% user.help.forEach(function(help){ %>
+                <li><%= help %></li>
+                <% }) %>
+              </ul>
+            </section>
+            <section class="map">
+              <section>
+                <h4>Mijn Adres:</h4>
+                <p><strong>Stad:</strong> <%= user.city %></p>
+                <p><strong>Straat:</strong> <%= user.street %></p>
+                <p><strong>Huisnummer:</strong> <%= user.houseNumber %> </p>
+              </section>
+              <div id="map" style="height: 300px; width: 100%;"></div>
+            </section>
+          </section>
+        </section>
+        <!-- <form class="logout" action="/logout?_method=DELETE" method="POST">
+              <button type="submit">Log out →</button>
+          </form> -->
+      </section>
+      <section class="midLine">
+        <div class="midLine"></div>
+      </section>
+      <section class="sidebar">
+        <section class="trades">
+          <h3><%= careTradesTitle %></h3>
+          <article>
+            <% user.oldPersonTrades.forEach((oldTrade)=> { %>
+            <img src="/images/<%= oldTrade %>.png" alt="icon">
+            <% }); %>
+          </article>
+        </section>
+        <section class="trades">
+          <h3>Wat is verwacht:</h3>
+          <article>
+            <% user.careGiverTrades.forEach((careTrade)=> { %>
+            <img src="/images/<%= careTrade %>.png" alt="icon">
+            <% }); %>
+          </article>
+        </section>
+      </section>
+    </section>
   </main>
-  <input type="hidden" value="<%= user.lat %>" id="lat">
-  <input type="hidden" value="<%= user.lon %>" id="lng">
   <footer>
     <%- include('../partials/footer'); %>
   </footer>
+  <%if(activeAcc.likes){%>
+  <section class="likes">
+    <% activeAcc.likes.forEach((like) => {%>
+    <li><%= like %></li>
+    <%})%>
+  </section>
+  <%}%>
+  <input type="hidden" value="<%= user.lat %>" id="lat">
+  <input type="hidden" value="<%= user.lon %>" id="lng">
+
   <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG0TS1HiOvZFbjpnuuzypOqfPRQedy5OQ&callback=initMap">
   </script>
   <script type="text/javascript" src="/scripts/user-details.js"></script>
+  <script type="text/javascript" src="/scripts/likes.js"></script>
 </body>
 
 </html>
