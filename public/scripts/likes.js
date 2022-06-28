@@ -24,6 +24,7 @@ if (likes) {
             const svg = section.children[1].children[0].children[0].children[0];
             const method = checklist.includes(buttonValue);
             if (method == true) {
+                // svg.classList.add("jsLike")
                 svg.style.fill = "#519188";
                 form.action = "/" + "likes";
                 but.name = "remove";
@@ -34,11 +35,10 @@ if (likes) {
         let value = btn.value;
         const method = checklist.includes(value)
         if (method == true) {
+            // svgtje.classList.add("jsLike")
             svgtje.style.fill = "#519188";
             btn.name = "remove";
             frm.action = "/" + "likes";
         }
     }
-
-
 }
