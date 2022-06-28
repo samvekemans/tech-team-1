@@ -1,4 +1,5 @@
 // Styling van de index page
+
 .index {
 	height: 100vh;
 	display: flex;
@@ -15,14 +16,13 @@
 			padding: 10%;
 
 			h1 {
-				font-family: 'Fascinate', cursive;
 				font-size: 3.75em;
 			}
 
 			p {
-				font-family: "Roboto", sans-serif;
 				font-size: 1.3em;
 				margin-bottom: 1.9em;
+				font-weight: 300;
 
 				&:first-of-type {
 					margin: 0.7em 0em;
@@ -31,7 +31,6 @@
 
 			a {
 				padding: 0.7em;
-				font-family: "Roboto", sans-serif;
 				font-weight: bold;
 				text-decoration: none;
 				color: #ffffff;
