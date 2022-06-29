@@ -10,29 +10,59 @@
         <%- include('../partials/header'); %>
     </header>
 
-
     <main>
-        <section class="sidebar">
-            <img src="<%= user.pictureUser %>" alt="">
-            <section class="info">
-                <h2><%= user.name %> <span><%= user.age %></span></h2>
-                <section>
-                    <p><strong>Over mij:</strong>
-                        <p><%= user.description %></p>
-                </section>
-                <section>
-                    <p><strong>Ik ben op zoek naar:</strong>
-                        <ul>
-                            <% user.help.forEach(function(help){ %>
-                            <li><%= help %></li>
-                            <% }) %>
-                        </ul>
-                </section>
-            </section>
+        <section class="banner">
+            <h1>Mijn profiel</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1366 163.68">
+                <path class="cls-1"
+                    d="M0,163.68C215.94,64.47,388.41,49.89,504.63,54.33c157.74,6.01,227.33,47.62,384.8,52.22,204.29,5.97,370.77-55.77,476.57-106.55V163.68H0Z" />
+            </svg>
         </section>
-        <section class="content">
-            <article>
-                <section>
+        <section>
+            <section class="content">
+                <section class="pictureName">
+                    <img src="<%= user.pictureUser %>" alt="">
+                    <h2><%= user.name %> <span><%= user.age %></span></h2>
+                    <form class="logout" action="/logout?_method=DELETE" method="POST">
+                        <button type="submit">Log out →</button>
+                    </form>
+                </section>
+                <section class="line">
+                    <div class="line"></div>
+                </section>
+                <section class="info">
+                    <section>
+                        <h3>Persoonlijke gegevens</h3>
+                        <section>
+                            <h4>Over mij:</h4>
+                            <p><%= user.description %></p>
+                        </section>
+                        <section>
+                            <h4>Ik ben op zoek naar:</h4>
+                            <ul>
+                                <% user.help.forEach(function(help){ %>
+                                <li><%= help %></li>
+                                <% }) %>
+                            </ul>
+                        </section>
+                        <section class="map">
+                            <section>
+                                <h4>Mijn Adres:</h4>
+                                <p><strong>Stad:</strong> <%= user.city %></p>
+                                <p><strong>Straat:</strong> <%= user.street %></p>
+                                <p><strong>Huisnummer:</strong> <%= user.houseNumber %> </p>
+                            </section>
+                            <div id="map" style="height: 300px; width: 100%;"></div>
+                        </section>
+                    </section>
+                </section>
+
+            </section>
+            <section class="midLine">
+                <div class="midLine"></div>
+            </section>
+            <section class="sidebar">
+                <section class="trades">
                     <h3><%= careTradesTitle %></h3>
                     <article>
                         <% user.oldPersonTrades.forEach((oldTrade)=> { %>
@@ -40,7 +70,7 @@
                         <% }); %>
                     </article>
                 </section>
-                <section>
+                <section class="trades">
                     <h3>Wat is verwacht:</h3>
                     <article>
                         <% user.careGiverTrades.forEach((careTrade)=> { %>
@@ -48,18 +78,24 @@
                         <% }); %>
                     </article>
                 </section>
-            </article>
-            <section class="map">
-                <section>
-                    <h3>Mijn Adres:</h3>
-                    <p><strong>Stad:</strong> <%= user.city %></p>
-                    <p><strong>Straat:</strong> <%= user.street %></p>
-                    <p><strong>Huisnummer:</strong> <%= user.houseNumber %> </p>
+                <%if(user.likes.length >= 1 ){%>
+                <section class="sideLine">
+                    <div class="sideLine"></div>
                 </section>
-                <div id="map" style="height: 100%; width: 75%;"></div>
+
+                <section class="like">
+
+                    <%if(user.likes.length == 1 ){%>
+                    <h3>Je hebt <%= user.likes.length %> gebruiker geliked </h3>
+                    <% } %>
+                    <%if(user.likes.length >= 2 ){%>
+                    <h3>Je hebt <%= user.likes.length %> gebruikers geliked </h3>
+                    <% } %>
+                    <a href="/likes">Bekijk alle likes</a>
+                </section>
+                <% } %>
             </section>
         </section>
-
     </main>
     <input type="hidden" value="<%= user.lat %>" id="lat">
     <input type="hidden" value="<%= user.lon %>" id="lng">

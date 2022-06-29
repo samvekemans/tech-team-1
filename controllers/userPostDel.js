@@ -8,15 +8,19 @@ const userPostDel = async (req, res) => {
 
     const idLogInUser = req.user
     // console.log("Logged In User:" + " " + idLogInUser)
-
+    console.log(req.body.remove)
     const idUnfavUser = req.body.remove
     // console.log("Targetted ID:" + " " + idUnfavUser)
 
-    await User.updateOne( 
-        { _id: idLogInUser },
-        {$pull: {likes: idUnfavUser}
+    await User.updateOne({
+        _id: idLogInUser
+    }, {
+        $pull: {
+            likes: idUnfavUser
+        }
     })
-    res.redirect("/likes")
+    const url = req.headers.referer
+    res.redirect(`${url}`)
 }
 
 module.exports = userPostDel
