@@ -5,7 +5,10 @@ const sendMail = require('../config/nodemailer');
 
 // ROUTES
 const user_index = (req, res) => {
-  res.render('pages/index');
+  const title = "Home";
+  res.render('pages/index', {
+    title
+  });
 };
 
 const user_users = require('./userUsers');
@@ -23,11 +26,17 @@ const user_profiel = require('./userProfiel');
 const user_register_post = require('./userRegisterPost');
 
 const user_login = (req, res) => {
-  res.render('pages/login');
+  const title = "Login";
+  res.render('pages/login', {
+    title
+  });
 };
 
 const user_error = (req, res) => {
-  res.render('pages/error');
+  const title = "Pagina niet gevonden";
+  res.render('pages/error', {
+    title
+  });
 };
 
 const user_logout = require('./userLogOut');

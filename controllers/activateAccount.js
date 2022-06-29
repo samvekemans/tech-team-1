@@ -1,7 +1,10 @@
 const User = require('../models/user');
+const title = "Verify Account";
 
 const activateAcc = async (req, res) => {
-  const { token } = req.params;
+  const {
+    token
+  } = req.params;
   const id = atob(token);
 
   User.findById(id).exec(async (err, user) => {
@@ -16,6 +19,7 @@ const activateAcc = async (req, res) => {
           console.log(newUser);
           res.render('pages/verify', {
             newUser,
+            title,
           });
         } catch (err) {
           console.log(err);

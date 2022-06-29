@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const title = "Likes";
 
 const userLikes = async (req, res) => {
     const activeAcc = await User.findById(req.user)
@@ -28,6 +29,7 @@ const userLikes = async (req, res) => {
                 users,
                 noUsers,
                 activeAcc,
+                title,
             });
         })
         // Callback functie
@@ -52,6 +54,7 @@ const userLikes = async (req, res) => {
                 oldTradesTitle,
                 noUsers,
                 activeAcc,
+                title,
             });
         })
         // Render mensen
