@@ -1,5 +1,11 @@
 body {
     &.likes {
+        >h1 {
+            padding-top: 0.3em;
+            text-align: center;
+            font-family: 'Fascinate', cursive;
+            font-size: 3em;
+        }
         article {
             &.noLikes {
                 display: flex;
@@ -19,7 +25,6 @@ body {
                     background-color: #519188;
                     padding: .7em;
                     color: white;
-                    font-family: "Roboto", sans-serif;
                     font-weight: 700;
                     cursor: pointer;
                     transition: all 200ms;

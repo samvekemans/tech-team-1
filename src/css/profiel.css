@@ -60,6 +60,7 @@ body.profiel main section.content {
   z-index: 1;
   border-radius: 0 0 2em 0;
 }
+
 body.profiel main section.content section {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -67,6 +68,7 @@ body.profiel main section.content section {
           flex-direction: column;
   gap: 1em;
 }
+
 body.profiel main section.content section.pictureName {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -83,6 +85,7 @@ body.profiel main section.content section.pictureName img {
 }
 body.profiel main section.content section.pictureName h2 {
   text-align: center;
+
 }
 body.profiel main section.content section.pictureName h2 span {
   font-weight: 200;
@@ -100,7 +103,6 @@ body.profiel main section.content section.pictureName form.logout button {
   background-color: #519188;
   padding: 0.7em;
   color: white;
-  font-family: "Roboto", sans-serif;
   font-weight: 700;
   cursor: pointer;
   -webkit-transition: all 200ms;
@@ -202,6 +204,7 @@ body.profiel main section.content section section.map {
   height: 25em;
   width: 100%;
 }
+
 body.profiel main section.midLine {
   height: auto;
   padding: 1em 0;

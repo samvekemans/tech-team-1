@@ -11,6 +11,7 @@
   </header>
 
   <main>
+    <h1>Registreren</h1>
     <article class="buttons">
       <a href="/register" id="old-person">Ouderen</a>
       <a href="/register-zorg" id="caregiver">Zorgmedewerker</a>
@@ -25,7 +26,7 @@
       </div>
 
       <article>
-        <label for="pictureUser">
+        <label for="pictureUser" class="label">
           <div class="imgWrapper">
             <img src="/images/profile.png" alt="user" class="img">
           </div>
@@ -34,45 +35,34 @@
       </article>
 
       <article>
-        <label for="name">Naam</label>
-        <input name="name" type="text" required>
+        <!-- <label for="name">Naam</label> -->
+        <input name="name" type="text" placeholder="Volledige naam" required>
       </article>
 
       <article>
-        <label for="age">Leeftijd</label>
-        <input name="age" type="number" required>
+        <!-- <label for="age">Leeftijd</label> -->
+        <input name="age" type="number" placeholder="Leeftijd" required>
       </article>
       <article>
-        <label for="email">E-mailadres</label>
-        <input name="email" type="email" required>
+        <!-- <label for="email">E-mailadres</label> -->
+        <input name="email" type="email" placeholder="E-mailadres" required>
       </article>
       <article>
-        <label for="password">Wachtwoord</label>
-        <input name="password" type="password" required>
+        <!-- <label for="password">Wachtwoord</label> -->
+        <input name="password" type="password" placeholder="Wachtwoord" required>
       </article>
       <article>
-        <label for="description">Over jou</label>
-        <textarea name="description" type="text" required></textarea>
+        <!-- <label for="description">Over jou</label> -->
+        <textarea name="description" type="text"  placeholder="Vertel iets over jezelf..." required></textarea>
       </article>
-
-
-      <fieldset>
-        <legend><%= radioTitle %></legend>
-        <input value="Schoonmaker" id="cleaner" type="checkbox" name="help[]" class="search">
-        <label for="cleaner">Schoonmaker</label>
-        <input value="Gezelschap" id="company" type="checkbox" name="help[]" class="search">
-        <label for="company">Gezelschap</label>
-        <input value="Zorg" id="care" type="checkbox" name="help[]" class="search">
-        <label for="care">Zorg</label>
-      </fieldset>
 
       <section>
         <article>
-          <label for="zipcode">Postcode</label>
-          <input type="text" id="zipcode" name="zipcode">
+          <!-- <label for="zipcode">Postcode</label> -->
+          <input type="text" id="zipcode" name="zipcode" placeholder="Postcode">
 
-          <label for="houseNumber">Huisnummer</label>
-          <input type="number" id="houseNumber" name="houseNumber">
+          <!-- <label for="houseNumber">Huisnummer</label> -->
+          <input type="number" id="houseNumber" name="houseNumber" placeholder="Huisnummer">
 
           <p class="adress">Genereer adress</p>
         </article>
@@ -89,6 +79,16 @@
         </article>
       </section>
 
+      <fieldset>
+        <legend><%= radioTitle %></legend>
+        <input value="Schoonmaker" id="cleaner" type="checkbox" name="help[]" class="search">
+        <label for="cleaner">Schoonmaker</label>
+        <input value="Gezelschap" id="company" type="checkbox" name="help[]" class="search">
+        <label for="company">Gezelschap</label>
+        <input value="Zorg" id="care" type="checkbox" name="help[]" class="search">
+        <label for="care">Zorg</label>
+      </fieldset>
+      
       <section>
         <p><%= iconTitles.first %></p>
         <article>
