@@ -210,9 +210,10 @@ section.likes {
     margin-left: 1em;
     cursor: pointer;
     font-size: 1.5em;
+    transition: all 100ms;
 
     &:hover {
-        box-shadow: #519188 0px 0px 10px;
+        background-color: #1b3e3a;
     }
 }
 
@@ -224,8 +225,9 @@ section.likes {
     margin-right: 1em;
     cursor: pointer;
     font-size: 1.5em;
-
+    transition: all 100ms;
+    
     &:hover {
-        box-shadow: #519188 0px 0px 10px;
+        background-color: #1b3e3a;
     }
 }
