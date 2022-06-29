@@ -169,6 +169,7 @@
                     height: 2.5em;
                     width: 20em;
                     box-shadow: 3px 3px 2px rgba($color: #000000, $alpha: 0.105);
+                    outline: none;
                 }
 
                 label {
@@ -250,6 +251,7 @@
                     }
 
                     input {
+                        
                         &:checked {
                             +label {
                                 background-color: #519188;
@@ -332,15 +334,17 @@
                     padding: 1em;
                     transition: all 100ms;
                     box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 11%);
+                    outline: none;
 
                     &:focus {
-                        box-shadow: 3px 3px 2px 3px rgb( 0 0 0 / 20%);
-                        border: none;
+                        box-shadow: 3px 3px 6px 3px rgb( 0 0 0 / 20%);
+                        border: solid 2px rgb(124, 124, 124);
                     }
 
                 }
 
                 textarea {
+                    outline: none;
                     height: 8em;
                     font-size: 1em;
                     padding: 1em;
@@ -351,8 +355,8 @@
                     box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 11%);
 
                     &:focus {
-                        box-shadow: 3px 3px 2px 3px rgb( 0 0 0 / 20%);
-                        border: none;
+                        box-shadow: 3px 3px 6px 3px rgb( 0 0 0 / 20%);
+                        border: solid 2px rgb(124, 124, 124);
                     }
                 }
 
@@ -369,6 +373,7 @@
                 align-items: center;
 
                 input {
+                    accent-color: #519188;
                     cursor: pointer;
                     height: 2em;
                     width: 2em;

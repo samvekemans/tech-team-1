@@ -59,12 +59,26 @@ body {
                         width: 100%;
 
                         input {
+                            // height: 3em;
+                            // font-size: 1em;
+                            // border-radius: .5em;
+                            // border: 2px solid #dfdfdf;
+                            // padding: 1em;
+                            // transition: all 100ms;
+
                             height: 3em;
                             font-size: 1em;
                             border-radius: .5em;
                             border: 2px solid #dfdfdf;
                             padding: 1em;
                             transition: all 100ms;
+                            box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 11%);
+                            outline: none;
+
+                            &:focus {
+                                box-shadow: 3px 3px 6px 3px rgb( 0 0 0 / 20%);
+                                border: solid 2px rgb(124, 124, 124);
+                            }
                         }
                     }
 
