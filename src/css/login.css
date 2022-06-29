@@ -27,6 +27,9 @@ body.login main section {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.5em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 body.login main section h1 {
   font-size: 3em;
@@ -86,8 +89,6 @@ body.login main section form button {
   width: 100%;
   border-radius: 0.5em;
   height: 3em;
-}
-body.login main section form button:hover {
   -webkit-box-shadow: 2px 2px 10px rgba(81, 145, 136, 0.75);
           box-shadow: 2px 2px 10px rgba(81, 145, 136, 0.75);
 }
