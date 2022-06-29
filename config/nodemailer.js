@@ -3,7 +3,6 @@ const dotenv = require('dotenv').config();
 
 function sendMail(user) {
   const id = user._id;
-  console.log(id);
   const token = btoa(id);
   const transporter = nodemailer.createTransport({
     host: 'smtp.transip.email',
@@ -23,15 +22,7 @@ function sendMail(user) {
             <a href="http://localhost:3000/account/verify/${token}">Account activeren</a>`,
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log(`email send${info.response}`);
-    }
-  });
-
-  console.log('hello');
+  transporter.sendMail(mailOptions);
 }
 
 module.exports = sendMail;
