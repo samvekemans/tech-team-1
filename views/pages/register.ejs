@@ -11,157 +11,169 @@
   </header>
 
   <main>
-    <h1>Registreren</h1>
-    <article class="buttons">
-      <a href="/register" id="old-person">Ouderen</a>
-      <a href="/register-zorg" id="caregiver">Zorgmedewerker</a>
-    </article>
-    <p class="pElement"></p>
+    <section class="banner">
+      <h1>Registreren</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1366 163.68">
+        <path class="cls-1"
+          d="M0,163.68C215.94,64.47,388.41,49.89,504.63,54.33c157.74,6.01,227.33,47.62,384.8,52.22,204.29,5.97,370.77-55.77,476.57-106.55V163.68H0Z" />
+      </svg>
+    </section>
+    <section>
+      <article class="buttons">
+        <a href="/register" id="old-person">Ouderen</a>
+        <a href="/register-zorg" id="caregiver">Zorgmedewerker</a>
+      </article>
+      <p class="pElement"></p>
 
-    <form action="/register" method="post" class="form" enctype="multipart/form-data">
-      <div style="display: none;">
-        <input name="account" type="hidden" id="account" value="<%= valueType %>">
-        <input name="lat" type="hidden" id="lat">
-        <input name="lon" type="hidden" id="lng">
-      </div>
-
-      <article>
-        <label for="pictureUser" class="label">
-          <div class="imgWrapper">
-            <img src="/images/profile.png" alt="user" class="img">
-          </div>
-        </label>
-        <input id="pictureUser" type="file" name="pictureUser" class="pictureInput" accept="image/png, image/jpeg">
-      </article>
-
-      <article>
-        <!-- <label for="name">Naam</label> -->
-        <input name="name" type="text" placeholder="Volledige naam" required>
-      </article>
-
-      <article>
-        <!-- <label for="age">Leeftijd</label> -->
-        <input name="age" type="number" placeholder="Leeftijd" required>
-      </article>
-      <article>
-        <!-- <label for="email">E-mailadres</label> -->
-        <input name="email" type="email" placeholder="E-mailadres" required>
-      </article>
-      <article>
-        <!-- <label for="password">Wachtwoord</label> -->
-        <input name="password" type="password" placeholder="Wachtwoord" required>
-      </article>
-      <article>
-        <!-- <label for="description">Over jou</label> -->
-        <textarea name="description" type="text"  placeholder="Vertel iets over jezelf..." required></textarea>
-      </article>
-
-      <section>
+      <form action="/register" method="post" class="form" enctype="multipart/form-data">
+        <div style="display: none;">
+          <input name="account" type="hidden" id="account" value="<%= valueType %>">
+          <input name="lat" type="hidden" id="lat">
+          <input name="lon" type="hidden" id="lng">
+        </div>
         <article>
-          <!-- <label for="zipcode">Postcode</label> -->
-          <input type="text" id="zipcode" name="zipcode" placeholder="Postcode">
-
-          <!-- <label for="houseNumber">Huisnummer</label> -->
-          <input type="number" id="houseNumber" name="houseNumber" placeholder="Huisnummer">
-
-          <p class="adress">Genereer adress</p>
+          <label for="pictureUser" class="label">
+            <div class="imgWrapper">
+              <img src="/images/profile.png" alt="user" class="img">
+            </div>
+          </label>
+          <input id="pictureUser" type="file" name="pictureUser" class="pictureInput" accept="image/png, image/jpeg">
+        </article>
+        <article>
+          <!-- <label for="name">Naam</label> -->
+          <input name="name" type="text" placeholder="Volledige naam" required>
+        </article>
+        <article>
+          <!-- <label for="age">Leeftijd</label> -->
+          <input name="age" type="number" placeholder="Leeftijd" required>
+        </article>
+        <article>
+          <!-- <label for="email">E-mailadres</label> -->
+          <input name="email" type="email" placeholder="E-mailadres" required>
+        </article>
+        <article>
+          <!-- <label for="password">Wachtwoord</label> -->
+          <input name="password" type="password" placeholder="Wachtwoord" required>
+        </article>
+        <article>
+          <!-- <label for="description">Over jou</label> -->
+          <textarea name="description" type="text" placeholder="Vertel iets over jezelf..." required></textarea>
         </article>
 
-        <article>
-          <input type="hidden" name="province" id="province">
-          <input type="hidden" name="city" id="city">
-          <input type="hidden" name="street" id="street">
-          <input type="hidden" name="zipcode" id="zipcode">
-          <p class="province"></p>
-          <p class="city"></p>
-          <p class="street"></p>
-          <p class="zipcode"></p>
-        </article>
-      </section>
+        <section>
+          <article>
+            <!-- <label for="zipcode">Postcode</label> -->
+            <input type="text" id="zipcode" name="zipcode" placeholder="Postcode">
 
-      <fieldset>
-        <legend><%= radioTitle %></legend>
-        <input value="Schoonmaker" id="cleaner" type="checkbox" name="help[]" class="search">
-        <label for="cleaner">Schoonmaker</label>
-        <input value="Gezelschap" id="company" type="checkbox" name="help[]" class="search">
-        <label for="company">Gezelschap</label>
-        <input value="Zorg" id="care" type="checkbox" name="help[]" class="search">
-        <label for="care">Zorg</label>
-      </fieldset>
-      
-      <section>
-        <p><%= iconTitles.first %></p>
-        <article>
-          <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="sociaal" value="sociaal" hidden>
-          <label for="sociaal">
-            <img class="lazy" data-src="/images/sociaal.png" alt="sociaal">
-            <p>Sociaal</p>
-          </label>
+            <!-- <label for="houseNumber">Huisnummer</label> -->
+            <input type="number" id="houseNumber" name="houseNumber" placeholder="Huisnummer">
 
-          <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="behulpzaam" value="behulpzaam" hidden>
-          <label for="behulpzaam">
-            <img class="lazy" data-src="/images/behulpzaam.png" alt="Behulpzaam">
-            <p>Behulpzaam</p>
-          </label>
+            <p class="adress">Genereer adress</p>
+          </article>
 
-          <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="enthousiast" value="enthousiast"
-            hidden>
-          <label for="enthousiast">
-            <img class="lazy" data-src="/images/enthousiast.png" alt="enthousiast">
-            <p>Enthousiast</p>
-          </label>
+          <article>
+            <input type="hidden" name="province" id="province">
+            <input type="hidden" name="city" id="city">
+            <input type="hidden" name="street" id="street">
+            <input type="hidden" name="zipcode" id="zipcode">
+            <p class="province"></p>
+            <p class="city"></p>
+            <p class="street"></p>
+            <p class="zipcode"></p>
+          </article>
+        </section>
 
-          <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="flexibel" value="flexibel" hidden>
-          <label for="flexibel">
-            <img class="lazy" data-src="/images/flexibel.png" alt="flexibel">
-            <p>Flexibel</p>
-          </label>
+        <fieldset>
+          <legend><%= radioTitle %></legend>
+          <input value="Schoonmaker" id="cleaner" type="checkbox" name="help[]" class="search">
+          <label for="cleaner">Schoonmaker</label>
+          <input value="Gezelschap" id="company" type="checkbox" name="help[]" class="search">
+          <label for="company">Gezelschap</label>
+          <input value="Zorg" id="care" type="checkbox" name="help[]" class="search">
+          <label for="care">Zorg</label>
+        </fieldset>
 
-          <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="gevoelig" value="gevoelig" hidden>
-          <label for="gevoelig">
-            <img class="lazy" data-src="/images/gevoelig.png" alt="gevoelig">
-            <p>Gevoelig</p>
-          </label>
-        </article>
-      </section>
+        <section>
+          <p><%= iconTitles.first %></p>
+          <article>
+            <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="sociaal" value="sociaal" hidden>
+            <label for="sociaal">
+              <img class="lazy" data-src="/images/sociaal.png" alt="sociaal">
+              <p>Sociaal</p>
+            </label>
 
-      <section>
-        <p><%= iconTitles.second %></p>
-        <article>
-          <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="sociaal2" value="sociaal" hidden>
-          <label for="sociaal2">
-            <img class="lazy" data-src="/images/sociaal.png" alt="sociaal">
-            <p>Sociaal</p>
-          </label>
+            <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="behulpzaam" value="behulpzaam"
+              hidden>
+            <label for="behulpzaam">
+              <img class="lazy" data-src="/images/behulpzaam.png" alt="Behulpzaam">
+              <p>Behulpzaam</p>
+            </label>
 
-          <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="interest" value="interest" hidden>
-          <label for="interest">
-            <img class="lazy" data-src="/images/interest.png" alt="Interesse">
-            <p>Interesse</p>
-          </label>
+            <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="enthousiast" value="enthousiast"
+              hidden>
+            <label for="enthousiast">
+              <img class="lazy" data-src="/images/enthousiast.png" alt="enthousiast">
+              <p>Enthousiast</p>
+            </label>
 
-          <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="respect" value="respect" hidden>
-          <label for="respect">
-            <img class="lazy" data-src="/images/respect.png" alt="enthousiast">
-            <p>Respectvol</p>
-          </label>
+            <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="flexibel" value="flexibel" hidden>
+            <label for="flexibel">
+              <img class="lazy" data-src="/images/flexibel.png" alt="flexibel">
+              <p>Flexibel</p>
+            </label>
 
-          <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="flexibel2" value="flexibel" hidden>
-          <label for="flexibel2">
-            <img class="lazy" data-src="/images/flexibel.png" alt="flexibel">
-            <p>Flexibel</p>
-          </label>
+            <input class="checkbox1" type="checkbox" name="<%= trades.first %>" id="gevoelig" value="gevoelig" hidden>
+            <label for="gevoelig">
+              <img class="lazy" data-src="/images/gevoelig.png" alt="gevoelig">
+              <p>Gevoelig</p>
+            </label>
+          </article>
+        </section>
 
-          <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="openly" value="openly" hidden>
-          <label for="openly">
-            <img class="lazy" data-src="/images/openly.png" alt="gevoelig">
-            <p>Openhartig</p>
-          </label>
-        </article>
-      </section>
+        <section>
+          <p><%= iconTitles.second %></p>
+          <article>
+            <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="sociaal2" value="sociaal" hidden>
+            <label for="sociaal2">
+              <img class="lazy" data-src="/images/sociaal.png" alt="sociaal">
+              <p>Sociaal</p>
+            </label>
 
-      <button class="submit" type="submit">Registreren →</button>
-    </form>
+            <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="interest" value="interest" hidden>
+            <label for="interest">
+              <img class="lazy" data-src="/images/interest.png" alt="Interesse">
+              <p>Interesse</p>
+            </label>
+
+            <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="respect" value="respect" hidden>
+            <label for="respect">
+              <img class="lazy" data-src="/images/respect.png" alt="enthousiast">
+              <p>Respectvol</p>
+            </label>
+
+            <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="flexibel2" value="flexibel" hidden>
+            <label for="flexibel2">
+              <img class="lazy" data-src="/images/flexibel.png" alt="flexibel">
+              <p>Flexibel</p>
+            </label>
+
+            <input class="checkbox2" type="checkbox" name="<%= trades.second %>" id="openly" value="openly" hidden>
+            <label for="openly">
+              <img class="lazy" data-src="/images/openly.png" alt="gevoelig">
+              <p>Openhartig</p>
+            </label>
+          </article>
+        </section>
+        <section class="submitOrNot">
+          <a href="/login">Heb je toch wel al een account? Log in!</a>
+          <button class="submit" type="submit">Registreren →</button>
+
+        </section>
+
+      </form>
+
+    </section>
+
   </main>
   <script type="text/javascript" src="/scripts/register.js"></script>
   <script src="/scripts/lazyLoading.js"></script>

@@ -26,7 +26,9 @@ async function createUser(user, pictureUser) {
   const verified = 'notVerified';
   const hashedPassword = await bcrypt.hash(password, 10);
 
+  // eslint-disable-next-line no-useless-catch
   try {
+    // eslint-disable-next-line no-shadow
     const user = await User.create({
       account,
       lat,
@@ -50,7 +52,7 @@ async function createUser(user, pictureUser) {
     });
     sendMail(user);
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 }
 

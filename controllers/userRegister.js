@@ -1,3 +1,5 @@
+const title = "Registreren Ouderen";
+
 const register = (req, res) => {
   const iconTitles = {
     first: 'Welke eigenschappen verwacht je van de zorgmedewerker?',
@@ -15,6 +17,7 @@ const register = (req, res) => {
     valueType,
     trades,
     iconTitles,
+    title,
   });
 };
 

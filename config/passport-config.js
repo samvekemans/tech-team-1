@@ -2,8 +2,6 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 
 const passport = require('passport');
-// const flash = require("express-flash");
-// const session = require("express-session");
 
 function initialize2(passport, getEmail, GetId) {
   const authenticateUser2 = async (email, password, done) => {
