@@ -1,3 +1,5 @@
+const title = "Registreren Zorg";
+
 const zorg = (req, res) => {
   const iconTitles = {
     first: 'Welke eigenschappen passen het beste bij jou?',
@@ -15,6 +17,7 @@ const zorg = (req, res) => {
     valueType,
     trades,
     iconTitles,
+    title,
   });
 };
 

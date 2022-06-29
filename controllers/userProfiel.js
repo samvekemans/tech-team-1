@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const title = "Profiel";
 
 const profiel = async (req, res) => {
   const careTradesTitle = 'Mijn eigenschappen:';
@@ -8,6 +9,7 @@ const profiel = async (req, res) => {
     user,
     careTradesTitle,
     oldTradesTitle,
+    title,
   });
 };
 
