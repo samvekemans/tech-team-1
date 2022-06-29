@@ -29,6 +29,21 @@ h4 {
 }
 
 body {
+	&::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #519188;
+		border-radius: 6px;
+		border: none;
+	}
+
 	section {
 		&::-webkit-scrollbar {
 			width: 8px;
@@ -45,9 +60,6 @@ body {
 			border: none;
 		}
 	}
-
-
-
 }
 
 body {
@@ -80,8 +92,6 @@ body {
 				}
 			}
 		}
-
-
 	}
 
 	main {
@@ -135,7 +145,6 @@ img {
 			height: inherit;
 			background: url("/dist/images/webp/placeholder.webp") no-repeat center;
 			background-size: cover;
-			// object-fit: fill;
 			color: transparent;
 		}
 

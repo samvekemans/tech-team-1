@@ -39,13 +39,6 @@
 
 }
 
-// h1 {
-//     padding-top: 0.3em;
-//     padding-bottom: 1em;
-//     text-align: center;
-//     font-size: 3em;
-// }
-
 .img {
     max-width: 12em;
     aspect-ratio: 1/1;
@@ -54,11 +47,11 @@
 
 .register {
     header {
-		
+
         section {
 
             nav {
-                
+
                 ul {
                     display: none;
 
@@ -71,9 +64,8 @@
             }
         }
     }
-    
+
     main {
-        // max-width: 50em;
         margin: auto;
         display: flex;
         flex-direction: column;
@@ -85,7 +77,6 @@
         }
 
         .selected {
-
             color: #fff !important;
 
             &::after {
@@ -100,7 +91,7 @@
                 border-style: solid;
                 border-image: initial;
                 border-color: #519188 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
-                border-width: 10px;  
+                border-width: 10px;
                 transition: all 50ms;
             }
         }
@@ -251,7 +242,7 @@
                     }
 
                     input {
-                        
+
                         &:checked {
                             +label {
                                 background-color: #519188;
@@ -337,7 +328,7 @@
                     outline: none;
 
                     &:focus {
-                        box-shadow: 3px 3px 6px 3px rgb( 0 0 0 / 20%);
+                        box-shadow: 3px 3px 6px 3px rgb(0 0 0 / 20%);
                         border: solid 2px rgb(124, 124, 124);
                     }
 
@@ -355,7 +346,7 @@
                     box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 11%);
 
                     &:focus {
-                        box-shadow: 3px 3px 6px 3px rgb( 0 0 0 / 20%);
+                        box-shadow: 3px 3px 6px 3px rgb(0 0 0 / 20%);
                         border: solid 2px rgb(124, 124, 124);
                     }
                 }

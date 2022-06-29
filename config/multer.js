@@ -6,7 +6,6 @@ const fileStorageEngine = multer.diskStorage({
     cb(null, `./public/uploads`);
   },
   filename(req, file, cb) {
-    // file.originalname moet misschien weg i.v.m. gulp -> bestanden krijgen een andere extentie.
     cb(null, file.fieldname + Date.now() + path.extname(file.originalname));
   },
 });

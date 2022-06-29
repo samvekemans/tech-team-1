@@ -61,7 +61,6 @@ body.profiel {
                             object-fit: cover;
                             box-shadow: 3px 3px 5px rgba($color: #808080, $alpha: 0.6);
                             overflow: hidden;
-                            // margin-left: -1em;
                             list-style: none;
                             position: relative;
 
@@ -76,10 +75,8 @@ body.profiel {
                                     height: inherit;
                                     background: url("/dist/images/webp/placeholder.webp") no-repeat center;
                                     background-size: cover;
-                                    // object-fit: fill;
                                     color: transparent;
                                 }
-
                             }
                         }
 
@@ -155,7 +152,6 @@ body.profiel {
                                             }
                                         }
                                     }
-
                                 }
                             }
                         }
@@ -200,12 +196,12 @@ body.profiel {
                                     margin-top: 0.2em;
                                     background-color: #f2d6ca;
                                     border-radius: 20px;
-                                    font-weight:500;
+                                    font-weight: 500;
                                 }
                             }
                         }
                     }
-                    
+
                     section {
                         &.map {
                             display: flex;
