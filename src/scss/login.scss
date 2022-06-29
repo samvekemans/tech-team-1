@@ -1,23 +1,23 @@
 body {
     &.login {
         header {
-		
+
             section {
-    
+
                 nav {
-                    
+
                     ul {
                         display: none;
-    
+
                     }
-    
+
                     form {
                         display: none;
-    
+
                     }
                 }
             }
-    
+
         }
 
         main {
@@ -91,3 +91,4 @@ body {
 
         }
     }
+}
