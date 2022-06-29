@@ -1,3 +1,6 @@
+$titleFont: 'Montserrat', sans-serif;
+$bodyFont: "Roboto", sans-serif;
+
 *,
 html {
 	padding: 0;
@@ -12,9 +15,14 @@ legend,
 fieldset,
 textarea,
 button,
-li,
+li
+ {
+	font-family: $bodyFont;
+}
+
 h1,
 h2,
-h3 {
-	font-family: "Roboto", sans-serif;
+h3,
+h4{
+	font-family: $titleFont;
 }
