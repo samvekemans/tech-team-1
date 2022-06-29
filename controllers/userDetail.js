@@ -1,10 +1,11 @@
 const User = require('../models/user');
 
 const detail = async (req, res) => {
-  try {
     const activeAcc = await User.findById(req.user).exec();
     const careTradesTitle = 'Mijn eigenschappen:';
     const oldTradesTitle = 'Wat de ouderen verwacht van jou:';
+    
+  try {
     const user = await User.findById(req.params.userId).exec();
     const title = user.name;
 
