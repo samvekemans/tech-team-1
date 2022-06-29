@@ -39,12 +39,15 @@
 				color: white;
 				background-color: #519188;
 				transition: all 100ms;
+
 				&:hover {
 					background-color: #1b3e3a;
 				}
+
 				&:first-of-type {
 					margin-right: 10px;
 				}
 			}
 		}
 	}
+}
