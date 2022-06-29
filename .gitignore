@@ -106,3 +106,4 @@ typings/
 .vscode
 
 .DS_Store
+*.css

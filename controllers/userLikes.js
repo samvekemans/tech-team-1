@@ -7,15 +7,11 @@ const userLikes = async (req, res) => {
     const gebruikers = []
     let oldTradesTitle = "Mijn eigeschappen:";
     const noUsers = "Er zijn geen gebruikers geliked."
-    // console.log(likes)
-    // console.log(loggedUser)
-    // console.log(loggedUser.likes)
 
     if (likes.length == 0) {
 
         likes.forEach(like => {
             gebruikers.push(likedUsers(like))
-            // console.log(gebruikers)
         })
 
         async function likedUsers(id) {
@@ -32,13 +28,10 @@ const userLikes = async (req, res) => {
                 title,
             });
         })
-        // Callback functie
-        // Render "je hebt nog geen likes" op de pagina
     } else {
         // Mensen ophalen uit likes
         likes.forEach(like => {
             gebruikers.push(likedUsers(like))
-            // console.log(gebruikers)
         })
 
         async function likedUsers(id) {
@@ -57,7 +50,6 @@ const userLikes = async (req, res) => {
                 title,
             });
         })
-        // Render mensen
     }
 }
 module.exports = userLikes

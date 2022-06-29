@@ -1,5 +1,4 @@
-const User = require("../models/user");
-
+const User = require('../models/user');
 
 const users = async (req, res) => {
     const activeAcc = await User.findById(req.user)
@@ -32,4 +31,4 @@ const users = async (req, res) => {
     }
 };
 
-module.exports = users
+module.exports = users;

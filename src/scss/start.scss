@@ -4,6 +4,26 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+  
+  header {
+		
+		section {
+
+			nav {
+				
+				ul {
+					display: none;
+
+				}
+
+				form {
+					display: none;
+
+				}
+			}
+		}
+
+	}
 
 	main {
 		max-width: 50em;
@@ -30,12 +50,13 @@
 			}
 
 			a {
-				padding: 0.7em;
+				padding: 1em;
 				font-weight: bold;
 				text-decoration: none;
 				color: white;
 				background-color: #519188;
 				transition: all 100ms;
+				border-radius: 50px;
 
 				&:hover {
 					background-color: #1b3e3a;
@@ -43,6 +64,7 @@
 
 				&:first-of-type {
 					margin-right: 10px;
+					padding: 1em 1.5em;
 				}
 			}
 		}

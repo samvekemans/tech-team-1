@@ -9,23 +9,20 @@ const activateAcc = async (req, res) => {
 
   User.findById(id).exec(async (err, user) => {
     if (user) {
-      console.log(user);
       if (user.verified == 'notVerified') {
         try {
           const change = {
             verified: 'verified',
           };
           const newUser = await User.findByIdAndUpdate(id, change);
-          console.log(newUser);
           res.render('pages/verify', {
             newUser,
             title,
           });
         } catch (err) {
-          console.log(err);
           res.redirect('/');
         }
-      } else if (user.verified == 'verified') {
+      } else if (user.verified === 'verified') {
         res.redirect('/');
       }
     } else {
