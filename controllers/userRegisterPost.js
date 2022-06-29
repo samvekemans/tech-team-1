@@ -1,6 +1,9 @@
 const path = require('path');
 
-const { src, dest } = require('gulp');
+const {
+  src,
+  dest
+} = require('gulp');
 const webp = require('gulp-webp');
 const createUser = require('../config/createUser');
 const User = require('../models/user');
@@ -20,7 +23,9 @@ const register_post = async (req, res) => {
   }
   gulped();
 
-  const { email } = req.body;
+  const {
+    email
+  } = req.body;
   const addUser = req.body;
 
   const source = req.file.filename; // .jpg .jpeg .png
@@ -58,7 +63,7 @@ const register_post = async (req, res) => {
           const workDate = dateNow - oneWeek;
           const overwrite = !(workDate < userCreatedAt);
           if (overwrite == true) {
-            createUser(addUser, filename);
+            createUser(addUser, filename, req);
             res.redirect('/');
           } else if (overwrite == false) {
             // Veranderen in een foutmelding op de pagina!!
@@ -69,7 +74,7 @@ const register_post = async (req, res) => {
         }
       } else {
         // Just create a user!
-        createUser(addUser, filename);
+        createUser(addUser, filename, req);
         res.redirect('/');
       }
     });

@@ -1,7 +1,8 @@
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv').config();
 
-function sendMail(user) {
+function sendMail(user, req) {
+  const url = req.headers.origin
   const id = user._id;
   const token = btoa(id);
   const transporter = nodemailer.createTransport({
@@ -19,7 +20,7 @@ function sendMail(user) {
     subject: 'Activate account',
     html: `
             <h2>Klik op de link om je account te activeren</h2>
-            <a href="http://localhost:3000/account/verify/${token}">Account activeren</a>`,
+            <a href="${url}/account/verify/${token}">Account activeren</a>`,
   };
 
   transporter.sendMail(mailOptions);

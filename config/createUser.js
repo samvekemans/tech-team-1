@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const sendMail = require('./nodemailer');
 
-async function createUser(user, pictureUser) {
+async function createUser(user, pictureUser, req) {
   const {
     account,
     lat,
@@ -50,7 +50,7 @@ async function createUser(user, pictureUser) {
       createdAt,
       verified,
     });
-    sendMail(user);
+    sendMail(user, req);
   } catch (err) {
     throw err;
   }
