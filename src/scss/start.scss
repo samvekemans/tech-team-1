@@ -4,6 +4,26 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+  
+  header {
+		
+		section {
+
+			nav {
+				
+				ul {
+					display: none;
+
+				}
+
+				form {
+					display: none;
+
+				}
+			}
+		}
+
+	}
 
 	main {
 		max-width: 50em;

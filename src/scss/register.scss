@@ -51,6 +51,25 @@ h1 {
 }
 
 .register {
+    header {
+		
+        section {
+
+            nav {
+                
+                ul {
+                    display: none;
+
+                }
+
+                form {
+                    display: none;
+
+                }
+            }
+        }
+    }
+    
     main {
         max-width: 50em;
         margin: auto;

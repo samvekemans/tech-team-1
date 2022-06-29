@@ -180,18 +180,8 @@ body.profiel {
                             }
                         }
                     }
-                    
-                    section {
-                        &.map {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 1em;
-                            height: 25em;
-                            width: 100%;
-                        }
-                    }
-                }
 
+                }
             }
 
             &.midLine {
