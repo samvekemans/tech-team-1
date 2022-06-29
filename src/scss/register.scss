@@ -55,7 +55,7 @@ h1 {
     main{
         max-width: 50em;
         margin: auto;
-        margin-top: 20px;
+        margin-top: 4em;
 
         .selected{
             &::after {
@@ -87,7 +87,6 @@ h1 {
                     text-align: center;
                     text-decoration: none;
                     color: black;
-                    font-family: "Roboto", sans-serif;
                     font-size: 1em;
                     border: #519188 3px solid;
 
@@ -154,7 +153,7 @@ h1 {
                         &:first-of-type {
                             display: flex;
                             flex-direction: column;
-                            gap: 0.5em;
+                            gap: 1em;
 
                             label {
                                 box-shadow: none;
@@ -165,7 +164,7 @@ h1 {
                         &:nth-child(2) {
                             display: flex;
                             flex-direction: column;
-                            padding: 0.5em;
+                            padding: 1em;
                             margin-left: 2em;
 
                             p {
@@ -256,20 +255,27 @@ h1 {
                 }
 
                 input {
-                    height: 2em;
+                    height: 3em;
                     font-size: 1em;
-                    box-shadow: 3px 3px 2px rgba($color: #000000, $alpha: 0.105);
+                    border-radius: .5em;
+                    border: 2px solid #dfdfdf;
+                    padding: 1em;
+                    transition: all 200ms;
+                    &:focus {
+                        box-shadow: 1px 1px 5px 1px rgba(37, 145, 78, 0.5);
+                    }
+
                 }
                 textarea {
-                    height: 5em;
+                    height: 8em;
                     font-size: 1em;
-                    padding: 0.2em;
+                    padding: 1em;
                     resize: none;
-                    box-shadow: 3px 3px 2px rgba($color: #000000, $alpha: 0.105);
-                    border-top: 2px solid black;
-                    border-left: 2px solid black;
-                    border-bottom: 2px solid rgba($color: #000000, $alpha: 0.6);
-                    border-right: 2px solid rgba($color: #000000, $alpha: 0.6);
+                    border: 2px solid #dfdfdf;
+                    border-radius: .5em;
+                    &:focus {
+                        box-shadow: 1px 1px 5px 1px rgba(37, 145, 78, 0.5);
+                    }
                 }
                 label {
                     font-weight: bold;
@@ -293,11 +299,11 @@ h1 {
                 }
                 label {
                     cursor: pointer;
-                    font-size: 1.5em;
+                    font-size: 1em;
                 }
                 legend {
                     font-weight: bold;
-                    margin-bottom: 0.2em;
+                    padding: 1em 0;
                 }
             }
         }
