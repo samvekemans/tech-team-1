@@ -1,3 +1,9 @@
+body.login header section nav ul {
+  display: none;
+}
+body.login header section nav form {
+  display: none;
+}
 body.login main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,6 +27,9 @@ body.login main section {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.5em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 body.login main section h1 {
   font-size: 3em;

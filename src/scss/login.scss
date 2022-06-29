@@ -1,5 +1,25 @@
 body {
     &.login {
+        header {
+		
+            section {
+    
+                nav {
+                    
+                    ul {
+                        display: none;
+    
+                    }
+    
+                    form {
+                        display: none;
+    
+                    }
+                }
+            }
+    
+        }
+
         main {
             display: flex;
             flex-direction: column;
@@ -11,6 +31,7 @@ body {
                 display: flex;
                 flex-direction: column;
                 gap: .5em;
+                align-items: center;
 
                 h1 {
                     font-size: 3em;
@@ -75,4 +96,3 @@ body {
 
         }
     }
-}

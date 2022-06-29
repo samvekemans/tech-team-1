@@ -4,6 +4,26 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+  
+  header {
+		
+		section {
+
+			nav {
+				
+				ul {
+					display: none;
+
+				}
+
+				form {
+					display: none;
+
+				}
+			}
+		}
+
+	}
 
 	main {
 		max-width: 50em;
@@ -37,7 +57,6 @@
 				background-color: #519188;
 				transition: all 100ms;
 				border-radius: 50px;
-
 
 				&:hover {
 					background-color: #1b3e3a;

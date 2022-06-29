@@ -6,6 +6,7 @@ header {
     nav {
 		display: flex;
 		align-items: center;
+        // justify-content: flex-end;
 
         img{
             max-height: 5em;
@@ -13,39 +14,69 @@ header {
 
     ul {
         display: flex;
-		justify-content: space-evenly;
         width: 100%;
-        
+        justify-content: flex-end;
 
         li {
             list-style: none;
-            border-left: 2px solid #519188;
-            border-right: 2px solid #519188;
             height: 100%;
-            padding: 1.5em;
+            padding: 1em;
+
+            &:last-of-type {
+                background-color: #519188;
+                border-radius: 50px;
+                transition: all 100ms;
+                margin-left: 2em;
+
+                a {
+                    &:hover {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+
+                &:hover {
+                    background-color: #2d5c56;
+                }
+            }
             
             a {
+                font-family: Montserrat,sans-serif;
+                text-transform: uppercase;
                 text-align: center;
-                color: #519188;
-				font-size: 20px;
-				font-weight: bold;
+                color: #fff;
+				font-size: 1em;
+				font-weight: 600;
 				text-decoration: none;
                 padding: 1em 2em;
                 border-radius: 5px;
-                transition: ease-in-out;
-                transition-duration: 300ms;
+                transition: all 100ms;
 
                 &:hover {
-					background-color: #d5b9b1;
-                    text-decoration: underline;
+                    text-shadow: 1px 1px 5px rgba($color: #000000, $alpha: .4);
 				}
 
                 &:active {
                     border: 2px solid #519188;
                 }
 
+        button {
+            // padding: .2em .4em;
+            font-size: 1em;
+            border: 2px solid #519188;
+            background-color: #519188;
+            padding: .9em;
+            color: white;
+            font-weight: 700;
+            // background-color: transparent;
+            cursor: pointer;
+            transition: all 200ms;
+
+
+            &:hover {
+                text-decoration: underline;
+                box-shadow: 2px 2px 10px rgba($color: #519188, $alpha: 0.75);
             }
         }
-    }
     }
 }

@@ -11,14 +11,7 @@ const passportConfig = require('../config/passport-config');
 
 const User = require('../models/user');
 
-const {
-  upload
-} = require('../config/multer');
-
-// // Link naar Multer config.
-// const {
-//     storage
-// } = require('./config/multer')
+const { upload } = require('../config/multer');
 
 const checkLogged = passportConfig.checkAuthenticated;
 const checkNotLogged = passportConfig.checkNotAuthenticated;
@@ -29,7 +22,7 @@ passportConfig.initialize2(
     await User.findOne({
       email,
     }),
-    (id) => id
+  (id) => id
 );
 
 // Routes

@@ -87,6 +87,7 @@ body.profiel main section.content section.pictureName h2 {
 body.profiel main section.content section.pictureName h2 span {
   font-weight: 200;
 }
+
 body.profiel main section.content section.pictureName form.logout {
   position: absolute;
   top: 3em;
@@ -201,6 +202,7 @@ body.profiel main section.content section section.map {
   height: 25em;
   width: 100%;
 }
+
 body.profiel main section.midLine {
   height: auto;
   padding: 1em 0;
@@ -262,6 +264,7 @@ body.profiel main section.sidebar section.like a {
   border: none;
   text-decoration: none;
 }
+
 body.profiel main section.sidebar section.like a:hover {
   background-color: #1b3e3a;
 }
