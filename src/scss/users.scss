@@ -13,14 +13,21 @@
             margin-top: 1em;
         }
 
+        >h1 {
+            padding-top: 0.3em;
+            text-align: center;
+            font-family: 'Fascinate', cursive;
+            font-size: 3em;
+        }
+
         >section {
             max-width: 60em;
             margin: auto;
-            margin-top: 20px;
             display: flex;
             overflow-x: auto;
             overflow-y: hidden;
             padding: 2em 0.2em;
+            padding-top: 0em;
             position: relative;
             align-items: center;
             scroll-behavior: smooth;
