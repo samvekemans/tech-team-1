@@ -1,64 +1,67 @@
 // styling van de header
 header {
-	padding: 0.3em 1.3em;
-	background-color: #f2d6ca;
+    padding: 0.3em 1.3em;
+    background-color: #f2d6ca;
 
     nav {
-		display: flex;
-		align-items: center;
+        display: flex;
+        align-items: center;
         // justify-content: flex-end;
 
-        img{
+        img {
             max-height: 5em;
         }
 
-    ul {
-        display: flex;
-        width: 100%;
-        justify-content: flex-end;
+        ul {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
 
-        li {
-            list-style: none;
-            height: 100%;
-            padding: 1em;
+            li {
+                list-style: none;
+                height: 100%;
+                padding: 1em;
 
-            &:last-of-type {
-                background-color: #519188;
-                border-radius: 50px;
-                transition: all 100ms;
-                margin-left: 2em;
+                &:last-of-type {
+                    background-color: #519188;
+                    border-radius: 50px;
+                    transition: all 100ms;
+                    margin-left: 2em;
 
-                a {
+                    a {
+                        &:hover {
+                            color: #fff;
+                            text-decoration: none;
+                        }
+                    }
+
                     &:hover {
-                        color: #fff;
-                        text-decoration: none;
+                        background-color: #2d5c56;
                     }
                 }
 
-                &:hover {
-                    background-color: #2d5c56;
+                a {
+                    font-family: Montserrat, sans-serif;
+                    text-transform: uppercase;
+                    text-align: center;
+                    color: #fff;
+                    font-size: 1em;
+                    font-weight: 600;
+                    text-decoration: none;
+                    padding: 1em 2em;
+                    border-radius: 5px;
+                    transition: all 100ms;
+
+                    &:hover {
+                        text-shadow: 1px 1px 5px rgba($color: #000000, $alpha: .4);
+                    }
+
+                    &:active {
+                        border: 2px solid #519188;
+                    }
                 }
             }
-            
-            a {
-                font-family: Montserrat,sans-serif;
-                text-transform: uppercase;
-                text-align: center;
-                color: #fff;
-				font-size: 1em;
-				font-weight: 600;
-				text-decoration: none;
-                padding: 1em 2em;
-                border-radius: 5px;
-                transition: all 100ms;
-
-                &:hover {
-                    text-shadow: 1px 1px 5px rgba($color: #000000, $alpha: .4);
-				}
-
-                &:active {
-                    border: 2px solid #519188;
-                }
+        }
 
         button {
             // padding: .2em .4em;
