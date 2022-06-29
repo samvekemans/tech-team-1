@@ -3,24 +3,24 @@
     display: none;
 }
 
-.label{
+.label {
     max-height: 13em;
 }
 
-.imgWrapper{
+.imgWrapper {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: opacity 200ms;
-    
-    &::after{
+
+    &::after {
         background-image: url('/images/profile-plus.png');
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
         display: inline-block;
-        content:"";
+        content: "";
         position: absolute;
         top: 0px;
         right: 0px;
@@ -28,33 +28,42 @@
         bottom: 0px;
         opacity: 0;
     }
-    &:hover{
+
+    &:hover {
         opacity: 0.8;
-        &::after{
+
+        &::after {
             opacity: .9;
         }
     }
 
 }
 
-h1 {
-    padding-top: 0.3em;
-    padding-bottom: 1em;
-    text-align: center;
-    font-size: 3em;
-}
+// h1 {
+//     padding-top: 0.3em;
+//     padding-bottom: 1em;
+//     text-align: center;
+//     font-size: 3em;
+// }
 
 .img {
     max-width: 12em;
-    aspect-ratio:1/1;
+    aspect-ratio: 1/1;
     border-radius: 100%;
 }
 
 .register {
     main {
-        max-width: 50em;
+        // max-width: 50em;
         margin: auto;
-        margin-top: 4em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        section {
+            max-width: 50em;
+            margin-top: -1em;
+        }
 
         .selected {
             &::after {
@@ -137,12 +146,43 @@ h1 {
 
                 input {
                     height: 2.5em;
-	                  width: 20em;
+                    width: 20em;
                     box-shadow: 3px 3px 2px rgba($color: #000000, $alpha: 0.105);
                 }
 
                 label {
                     font-weight: bold;
+                }
+
+                &.submitOrNot {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    a {
+                        color: #000;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    button {
+                        grid-column: span 5;
+                        margin-left: auto;
+                        padding: 1em 2em;
+                        background-color: #519188;
+                        border: none;
+                        border-radius: 0.5em;
+                        font-size: 1em;
+                        cursor: pointer;
+                        text-align: end;
+
+                        &:hover {
+                            box-shadow: #519188 0px 0px 5px;
+                        }
+                    }
                 }
 
                 &:first-of-type {
@@ -267,6 +307,7 @@ h1 {
                     border: 2px solid #dfdfdf;
                     padding: 1em;
                     transition: all 200ms;
+
                     &:focus {
                         box-shadow: 1px 1px 5px 1px rgba(37, 145, 78, 0.5);
                     }
@@ -280,6 +321,7 @@ h1 {
                     resize: none;
                     border: 2px solid #dfdfdf;
                     border-radius: .5em;
+
                     &:focus {
                         box-shadow: 1px 1px 5px 1px rgba(37, 145, 78, 0.5);
                     }

@@ -4,17 +4,12 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 4em;
             width: 100%;
 
             section {
                 display: flex;
                 flex-direction: column;
                 gap: .5em;
-
-                h1 {
-                    font-size: 3em;
-                }
 
                 p {
                     color: orange;
