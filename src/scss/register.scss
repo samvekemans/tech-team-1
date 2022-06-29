@@ -1,6 +1,6 @@
 // Styling van de register pagina
 .pictureInput {
-	display: none;
+    display: none;
 }
 
 .label{
@@ -34,7 +34,7 @@
             opacity: .9;
         }
     }
-    
+
 }
 
 h1 {
@@ -51,13 +51,13 @@ h1 {
     border-radius: 100%;
 }
 
-.register{
-    main{
+.register {
+    main {
         max-width: 50em;
         margin: auto;
         margin-top: 4em;
 
-        .selected{
+        .selected {
             &::after {
                 content: "";
                 top: 100%;
@@ -79,6 +79,7 @@ h1 {
                 display: flex;
                 justify-content: center;
                 gap: 1em;
+
                 a {
                     position: relative;
                     width: 12.5em;
@@ -125,19 +126,19 @@ h1 {
                 font-size: 1em;
                 cursor: pointer;
                 text-align: end;
-            
+
                 &:hover {
                     box-shadow: #519188 0px 0px 5px;
                 }
             }
-            
+
             section {
                 grid-column: span 5;
                 margin: 1em 0em;
 
                 input {
                     height: 2.5em;
-	                width: 20em;
+	                  width: 20em;
                     box-shadow: 3px 3px 2px rgba($color: #000000, $alpha: 0.105);
                 }
 
@@ -147,7 +148,7 @@ h1 {
 
                 &:first-of-type {
                     grid-column: span 4;
-	                display: flex;
+                    display: flex;
 
                     article {
                         &:first-of-type {
@@ -161,6 +162,7 @@ h1 {
                                 flex-direction: row;
                             }
                         }
+
                         &:nth-child(2) {
                             display: flex;
                             flex-direction: column;
@@ -173,7 +175,7 @@ h1 {
                         }
                     }
                 }
-                
+
                 article {
                     display: flex;
                     justify-content: space-around;
@@ -181,9 +183,10 @@ h1 {
                     flex-direction: row;
                     gap: 1em;
 
-                    p{
+                    p {
                         margin-bottom: 0em;
                     }
+
                     input {
                         &:checked {
                             +label {
@@ -192,6 +195,7 @@ h1 {
                             }
                         }
                     }
+
                     label {
                         width: 8em;
                         display: flex;
@@ -200,7 +204,7 @@ h1 {
                         box-shadow: 0px 0px 10px #519188;
                         padding: 1em;
                         border-radius: 0.3em;
-                    
+
                         &:hover {
                             box-shadow: 0px 0px 20px #519188;
                         }
@@ -215,12 +219,13 @@ h1 {
                 label {
                     cursor: pointer;
                 }
+
                 p {
                     margin-bottom: 1em;
-	                font-weight: bold;
+                    font-weight: bold;
                 }
             }
-       
+
             article {
                 display: flex;
                 flex-direction: column;
@@ -236,22 +241,24 @@ h1 {
                         cursor: pointer;
                     }
                 }
-                &:nth-child(3){
+
+                &:nth-child(3) {
                     grid-column: span 2;
                     margin-right: 0.5em;
                 }
-                &:nth-child(5){
+
+                &:nth-child(5) {
                     grid-column: span 3;
                 }
 
-                &:nth-child(6){
+                &:nth-child(6) {
                     grid-column: span 3;
                 }
 
-                &:nth-child(7){
+                &:nth-child(7) {
                     grid-column: span 3;
                     display: flex;
-                    justify-content: end;
+                    justify-content: flex-end;
                 }
 
                 input {
@@ -266,6 +273,7 @@ h1 {
                     }
 
                 }
+
                 textarea {
                     height: 8em;
                     font-size: 1em;
@@ -277,10 +285,12 @@ h1 {
                         box-shadow: 1px 1px 5px 1px rgba(37, 145, 78, 0.5);
                     }
                 }
+
                 label {
                     font-weight: bold;
                 }
             }
+
             fieldset {
                 grid-column: span 3;
                 border: none;
@@ -288,7 +298,7 @@ h1 {
                 display: flex;
                 align-items: center;
 
-                input{
+                input {
                     cursor: pointer;
                     height: 2em;
                     width: 2em;
@@ -297,10 +307,12 @@ h1 {
                     background-color: black;
                     border: 2px solid black;
                 }
+
                 label {
                     cursor: pointer;
                     font-size: 1em;
                 }
+
                 legend {
                     font-weight: bold;
                     padding: 1em 0;
@@ -309,16 +321,17 @@ h1 {
         }
     }
 }
+
 .pElement {
-	color: red;
-	text-align: center;
-	margin-top: 2em;
+    color: red;
+    text-align: center;
+    margin-top: 2em;
 }
 
 .adress {
-	padding: 0.2em 1em;
-	background-color: #519188;
-	border-radius: 5px;
-	cursor: pointer;
-	margin-right: auto;
+    padding: 0.2em 1em;
+    background-color: #519188;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: auto;
 }

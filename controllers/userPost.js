@@ -2,7 +2,7 @@ const User = require('../models/user');
 const arrayify = require('array-back');
 
 const userPost = async (req, res) => {
-    // Constante van gebruiker en likes
+    const method = req.body.method
     const idLoggedUser = req.user
     const idLikedUser = req.body.favorite
 
@@ -36,7 +36,8 @@ const userPost = async (req, res) => {
         console.log("gelukt")
     });
 
-    res.redirect("/")
+    const url = req.headers.referer
+    res.redirect(`${url}`)
 }
 
 module.exports = userPost

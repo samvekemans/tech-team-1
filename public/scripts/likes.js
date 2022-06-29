@@ -1,23 +1,44 @@
-let likes = document.querySelectorAll("section.likes li")
-let sect = document.querySelectorAll("section.section")
+let likes = document.querySelectorAll("section.likes li");
+let sect = document.querySelectorAll("section.section");
+const svgtje = document.querySelector("svg.heart");
+let btn = document.querySelector("button.btnHeart");
+const frm = document.querySelector("form.heart");
+
 
 if (likes) {
-    checklist = []
+    checklist = [];
 
     likes.forEach(like => {
         const id = like.outerText;
-        checklist.push(id)
+        checklist.push(id);
     })
 
     console.log(checklist)
     console.log(sect)
-    sect.forEach(section => {
-        console.log()
-        const buttonValue = section.children[1].children[0].children[0].value
-        const svg = section.children[1].children[0].children[0].children[0]
-        const method = checklist.includes(buttonValue)
+    if (sect) {
+        sect.forEach(section => {
+            console.log()
+            const form = section.children[1].children[0];
+            const but = section.children[1].children[0].children[0];
+            const buttonValue = section.children[1].children[0].children[0].value;
+            const svg = section.children[1].children[0].children[0].children[0];
+            const method = checklist.includes(buttonValue);
+            if (method == true) {
+                // svg.classList.add("jsLike")
+                svg.style.fill = "#519188";
+                form.action = "/" + "likes";
+                but.name = "remove";
+            }
+        })
+    }
+    if (svgtje) {
+        let value = btn.value;
+        const method = checklist.includes(value)
         if (method == true) {
-            svg.style.fill = "#519188"
+            // svgtje.classList.add("jsLike")
+            svgtje.style.fill = "#519188";
+            btn.name = "remove";
+            frm.action = "/" + "likes";
         }
-    })
+    }
 }
