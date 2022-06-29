@@ -20,12 +20,14 @@
         }
 
         >section {
+            z-index: 1;
             max-width: 60em;
+            height: 30.75em;
             margin: auto;
             display: flex;
             overflow-x: auto;
             overflow-y: hidden;
-            padding: 2em 0.2em;
+            padding: 2em 1.25em;
             padding-top: 0em;
             position: relative;
             align-items: center;
@@ -70,7 +72,7 @@
                         }
 
                         &:first-of-type {
-                            width: 20em;
+                            width: 27.5em;
                             display: flex;
                             justify-content: space-between;
                         }
@@ -104,18 +106,26 @@
                         }
 
                         >img {
-                            display: none;
-                        }
-
-                        div {
-                            background-position: center;
-                            background-size: cover;
-                            background-repeat: no-repeat;
+                            // display: none;
+                            overflow: hidden;
+                            object-fit: cover;
                             width: 150px;
                             height: 150px;
+                            border-radius: 100%;
                             box-shadow: 3px 3px 5px rgba($color: #808080, $alpha: 0.6);
                             margin-bottom: 1em;
                         }
+
+                        // div {
+                        //     background-position: center;
+                        //     background-size: cover;
+                        //     background-repeat: no-repeat;
+                        //     width: 150px;
+                        //     height: 150px;
+                        //     border-radius: 100%;
+                        //     box-shadow: 3px 3px 5px rgba($color: #808080, $alpha: 0.6);
+                        //     margin-bottom: 1em;
+                        // }
 
                         ul {
                             img {

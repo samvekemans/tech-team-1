@@ -56,9 +56,32 @@ body.profiel {
 
                         img {
                             width: 10em;
+                            height: 10em;
                             border-radius: 100%;
                             aspect-ratio: 1/1;
                             object-fit: cover;
+                            box-shadow: 3px 3px 5px rgba($color: #808080, $alpha: 0.6);
+                            overflow: hidden;
+                            // margin-left: -1em;
+                            list-style: none;
+                            position: relative;
+
+                            &[alt] {
+                                &::after {
+                                    content: "";
+                                    z-index: 1;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: inherit;
+                                    height: inherit;
+                                    background: url("/dist/images/webp/placeholder.webp") no-repeat center;
+                                    background-size: cover;
+                                    // object-fit: fill;
+                                    color: transparent;
+                                }
+
+                            }
                         }
 
                         h2 {
