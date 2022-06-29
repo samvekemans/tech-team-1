@@ -39,15 +39,22 @@ body {
 			margin: unset;
 
 			section {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
 				z-index: 1;
 				width: 50em;
-				height: 30em;
-				padding: 5%;
+				height: 25em;
+				padding: min(3%, 4em);
 
 				&.banner {
 					z-index: inherit;
 					position: absolute;
 					inset: 0 0 auto 0;
+				}
+
+				a {
+					margin-top: auto;
 				}
 			}
 		}
